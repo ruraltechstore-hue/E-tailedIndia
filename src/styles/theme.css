@@ -1,0 +1,134 @@
+/**
+ * Design tokens — single source of truth for colors.
+ * Tailwind maps these in tailwind.config.js (bg-brand, text-accent, etc.).
+ * Dark mode: toggle class "dark" on <html>; adjust values in .dark as needed.
+ */
+
+:root {
+  /* Brand (primary blue scale — site default) */
+  --color-brand: #021A54;
+  --color-brand-hover: #002faf;
+  --color-brand-active: #1e40af;
+  --color-brand-muted: #eff6ff;
+  --color-brand-subtle: #dbeafe;
+  --color-brand-foreground: #ffffff;
+  --color-brand-on-muted: #1d4ed8;
+
+  /* Secondary accent (green — paired with brand) */
+  --color-accent: #021A54;
+  --color-accent-hover: #15803d;
+  --color-accent-active: #166534;
+  --color-accent-muted: #f0fdf4;
+  --color-accent-subtle: #dcfce7;
+  --color-accent-foreground: #ffffff;
+  --color-accent-on-muted: #15803d;
+
+  /* Neutrals */
+  --color-surface: #ffffff;
+  --color-surface-elevated: #f9fafb;
+  --color-surface-muted: #f3f4f6;
+  --color-border: #e5e7eb;
+  --color-border-strong: #d1d5db;
+
+  /* Semantic */
+  --color-success: #16a34a;
+  --color-success-muted: #f0fdf4;
+  --color-success-border: #bbf7d0;
+  --color-success-foreground: #15803d;
+
+  --color-danger: #dc2626;
+  --color-danger-muted: #fef2f2;
+  --color-danger-border: #fecaca;
+  --color-danger-foreground: #b91c1c;
+
+  --color-warning: #d97706;
+  --color-warning-muted: #fffbeb;
+  --color-warning-border: #fde68a;
+  --color-warning-foreground: #b45309;
+
+  /* Service verticals (hero / section accents) */
+  --color-vertical-crm: #9333ea;
+  --color-vertical-crm-muted: #faf5ff;
+
+  --color-vertical-marketplace: #0891b2;
+  --color-vertical-marketplace-muted: #ecfeff;
+
+  --color-vertical-saas: #475569;
+  --color-vertical-saas-muted: #f8fafc;
+
+  --color-vertical-education: #dc2626;
+  --color-vertical-education-muted: #fef2f2;
+
+  --color-vertical-branding: #d97706;
+  --color-vertical-branding-muted: #fffbeb;
+
+  --color-vertical-business: #4f46e5;
+  --color-vertical-business-muted: #eef2ff;
+
+  --color-vertical-social: #ea580c;
+  --color-vertical-social-muted: #fff7ed;
+
+  --color-vertical-ecommerce: #16a34a;
+  --color-vertical-ecommerce-muted: #f0fdf4;
+
+  /* Partner tier chips / icons (PartnerWithUsPage) */
+  --color-tier-retailer: #2563eb;
+  --color-tier-distributor: #16a34a;
+  --color-tier-super: #ea580c;
+  --color-tier-white-label: #9333ea;
+  --color-tier-pincode: #0d9488;
+  --color-tier-pincode-5: #7c3aed;
+  --color-tier-enterprise: #0891b2;
+  --color-tier-admin-ns: #dc2626;
+  --color-tier-admin-src: #059669;
+  --color-tier-logistics: #ca8a04;
+  --color-tier-premium-badge: #059669;
+
+  /* One-off highlights (stats / about cards) */
+  --color-palette-purple-muted: #f3e8ff;
+  --color-palette-purple: #9333ea;
+  --color-palette-pink-muted: #fce7f3;
+  --color-palette-pink: #db2777;
+}
+
+.dark {
+  --color-brand: #3b82f6;
+  --color-brand-hover: #60a5fa;
+  --color-brand-active: #2563eb;
+  --color-brand-muted: #1e3a5f;
+  --color-brand-subtle: #1e40af;
+  --color-brand-foreground: #f8fafc;
+  --color-brand-on-muted: #93c5fd;
+
+  --color-accent: #22c55e;
+  --color-accent-hover: #4ade80;
+  --color-accent-active: #16a34a;
+  --color-accent-muted: #14532d;
+  --color-accent-subtle: #166534;
+  --color-accent-foreground: #f0fdf4;
+  --color-accent-on-muted: #86efac;
+
+  --color-surface: #0f172a;
+  --color-surface-elevated: #1e293b;
+  --color-surface-muted: #334155;
+  --color-border: #334155;
+  --color-border-strong: #475569;
+
+  --color-success-muted: #14532d;
+  --color-danger-muted: #450a0a;
+  --color-warning-muted: #451a03;
+
+  --color-vertical-crm-muted: #2e1065;
+  --color-vertical-marketplace-muted: #164e63;
+  --color-vertical-saas-muted: #1e293b;
+  --color-vertical-education-muted: #450a0a;
+  --color-vertical-branding-muted: #451a03;
+  --color-vertical-business-muted: #312e81;
+  --color-vertical-social-muted: #431407;
+  --color-vertical-ecommerce-muted: #14532d;
+
+  --color-palette-purple-muted: #2e1065;
+  --color-palette-purple: #c084fc;
+  --color-palette-pink-muted: #500724;
+  --color-palette-pink: #f472b6;
+}
