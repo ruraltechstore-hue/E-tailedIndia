@@ -69,8 +69,8 @@ export default function HowItWorks() {
             const Icon = step.icon;
             return (
               <div key={index} className="relative">
-                {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/4 left-full w-full h-0.5 bg-gray-300 -translate-x-4 z-0" />
+                {index < steps.length - 1 && index % 3 !== 2 && (
+                  <div className="hidden lg:block absolute top-1/4 left-full w-8 h-0.5 bg-gray-300 -translate-x-4 z-0" />
                 )}
                 <Card hover className="relative z-10">
                   <CardBody className="p-6 space-y-4">

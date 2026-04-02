@@ -87,11 +87,11 @@ export default function AIChatbot() {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-24 right-6 z-50 w-16 h-16 bg-brand hover:bg-brand-hover text-white rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 group"
+        className="fixed bottom-24 right-3 sm:right-6 z-50 w-16 h-16 bg-brand hover:bg-brand-hover text-white rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 group"
         aria-label="Open AI Chatbot"
       >
         <Bot className="w-8 h-8 group-hover:scale-110 transition-transform" />
-        <span className="absolute right-full mr-3 bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+        <span className="hidden lg:block absolute right-full mr-3 bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
           AI Assistant
         </span>
       </button>
@@ -101,9 +101,11 @@ export default function AIChatbot() {
   return (
     <div
       className={`fixed ${
-        isMinimized ? 'bottom-6 right-6' : 'bottom-6 right-6'
+        isMinimized ? 'bottom-4 right-3 sm:bottom-6 sm:right-6' : 'bottom-4 right-3 sm:bottom-6 sm:right-6'
       } z-50 bg-white rounded-2xl shadow-2xl transition-all duration-300 ${
-        isMinimized ? 'w-80 h-16' : 'w-96 h-[600px]'
+        isMinimized
+          ? 'w-[calc(100vw-1.5rem)] max-w-80 h-16'
+          : 'w-[calc(100vw-1.5rem)] max-w-96 h-[600px] max-h-[calc(100vh-2rem)] sm:max-h-[600px]'
       } flex flex-col`}
     >
       <div className="bg-brand text-white px-6 py-4 rounded-t-2xl flex items-center justify-between">
