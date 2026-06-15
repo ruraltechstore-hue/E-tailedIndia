@@ -288,7 +288,7 @@ export default function TermsAndConditions() {
                 In case of disputes:
               </p>
               <ol className="list-decimal pl-6 space-y-2">
-                <li>Contact our support team: support@e-tailedindia.com or +91 8125752562</li>
+                <li>Contact our support team: support@e-tailedindia.com or +91 93928 98733 or +91 9390168733</li>
                 <li>We will attempt to resolve within 15 working days</li>
                 <li>If unresolved, disputes will be subject to arbitration in Hyderabad, Telangana</li>
                 <li>Courts in Hyderabad have exclusive jurisdiction</li>
@@ -331,7 +331,7 @@ export default function TermsAndConditions() {
               <p><strong>Company:</strong> Etailed Digital Services Pvt. Ltd.</p>
               <p><strong>Address:</strong> Sai Silicon Heights, 3-118, Megha Hills Rd, Ayyappa Society, Mega Hills, Madhapur, Hyderabad, Telangana 500081, India</p>
               <p><strong>Email:</strong> support@e-tailedindia.com</p>
-              <p><strong>Phone:</strong> +91 8125752562</p>
+              <p><strong>Phone:</strong> +91 93928 98733 or +91 9390168733</p>
             </div>
           </CardBody>
         </Card>

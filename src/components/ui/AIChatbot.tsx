@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import { Bot, X, Send, Minimize2 } from 'lucide-react';
-import Button from './Button';
-import Input from './Input';
 
 interface Message {
   id: string;
@@ -16,7 +14,7 @@ export default function AIChatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: 'Hello! I\'m your Etailed Digital India AI Assistant. How can I help you today?',
+      text: 'Hello! I\'m your E-Tailed Digital India assistant. Ask me about digital marketing, SaaS solutions, or how we can help grow your business.',
       sender: 'bot',
       timestamp: new Date(),
     },
@@ -24,33 +22,35 @@ export default function AIChatbot() {
   const [inputMessage, setInputMessage] = useState('');
 
   const quickReplies = [
-    'How to register?',
-    'View all services',
-    'Check commission structure',
-    'KYC requirements',
+    'Contact us',
+    'Digital marketing services',
+    'SaaS solutions',
+    'Pricing information',
   ];
 
   const getBotResponse = (userMessage: string): string => {
     const message = userMessage.toLowerCase();
 
-    if (message.includes('register') || message.includes('signup')) {
-      return 'To register as a retailer, click on "Become Retailer" button at the top. You\'ll need your Aadhaar, PAN, and bank details for KYC verification.';
+    if (message.includes('register') || message.includes('signup') || message.includes('contact')) {
+      return 'To get started, visit our Contact page or reach us at support@e-tailedindia.com or +91 93928 98733 or +91 9390168733. WhatsApp support is also available 24/7!';
+    } else if (message.includes('marketing') || message.includes('seo') || message.includes('social')) {
+      return 'We offer SEO, Google Ads, Meta/Instagram Ads, social media management, content marketing, email campaigns, and lead generation funnels. Visit our All Services page to explore.';
+    } else if (message.includes('saas') || message.includes('software') || message.includes('crm')) {
+      return 'We build and deploy custom SaaS products including CRM, ERP, HRMS, LMS, booking systems, and industry-specific software. Contact us for a free consultation.';
     } else if (message.includes('service')) {
-      return 'We offer 100+ services including AEPS, DMT, Recharge, Bill Payment, Insurance, Loans, Travel Booking, and much more! Visit our All Services page to explore.';
-    } else if (message.includes('commission')) {
-      return 'Commission varies by service and your role (Retailer, Distributor, etc.). Login to your dashboard to view detailed commission structure for each service.';
-    } else if (message.includes('kyc')) {
-      return 'KYC requires: Aadhaar Card, PAN Card, Bank Account Details, and a recent photograph. Some advanced services may need additional verification.';
-    } else if (message.includes('wallet')) {
-      return 'Each user gets a digital wallet. You can add money via UPI, Net Banking, or request top-up from your distributor. All transactions reflect instantly.';
+      return 'Our services include digital marketing, website development, e-commerce, automation, SaaS products, branding, and training programs. Visit our All Services page to explore.';
+    } else if (message.includes('commission') || message.includes('pricing') || message.includes('price')) {
+      return 'Pricing depends on your project scope — marketing retainers, SaaS licenses, or one-time development. Contact us at support@e-tailedindia.com or +91 93928 98733 or +91 9390168733 for a custom quote.';
+    } else if (message.includes('automation') || message.includes('whatsapp')) {
+      return 'We set up WhatsApp Business API bots, email automation, CRM integrations, sales funnels, and lead nurturing workflows. Great for converting more prospects automatically.';
     } else if (message.includes('support') || message.includes('help')) {
-      return 'You can reach our support team at support@e-tailedindia.com or call +91 8125752562. WhatsApp support is also available 24/7!';
-    } else if (message.includes('aeps')) {
-      return 'AEPS (Aadhaar Enabled Payment System) allows cash withdrawal and balance inquiry using Aadhaar authentication. Requires fingerprint device.';
-    } else if (message.includes('dmt')) {
-      return 'Domestic Money Transfer (DMT) enables instant money transfer to any bank account in India. Daily transaction limits apply.';
+      return 'You can reach our team at support@e-tailedindia.com or call +91 93928 98733 or +91 9390168733. WhatsApp support is available 24/7!';
+    } else if (message.includes('website') || message.includes('ecommerce') || message.includes('e-commerce')) {
+      return 'We build business websites, Shopify/WooCommerce stores, landing pages, and marketplaces — all optimized for SEO and mobile performance.';
+    } else if (message.includes('partner') || message.includes('agency') || message.includes('white')) {
+      return 'We offer white-label digital marketing and SaaS delivery for agencies. Visit our Partner With Us page or contact us to learn more.';
     } else {
-      return 'I can help you with registration, services, commission details, KYC requirements, and more. What would you like to know?';
+      return 'I can help you with digital marketing, SaaS solutions, pricing, and how to get in touch. What would you like to know?';
     }
   };
 
@@ -65,12 +65,13 @@ export default function AIChatbot() {
     };
 
     setMessages((prev) => [...prev, userMessage]);
+    const currentInput = inputMessage;
     setInputMessage('');
 
     setTimeout(() => {
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: getBotResponse(inputMessage),
+        text: getBotResponse(currentInput),
         sender: 'bot',
         timestamp: new Date(),
       };
@@ -79,8 +80,24 @@ export default function AIChatbot() {
   };
 
   const handleQuickReply = (reply: string) => {
-    setInputMessage(reply);
-    handleSendMessage();
+    const userMessage: Message = {
+      id: Date.now().toString(),
+      text: reply,
+      sender: 'user',
+      timestamp: new Date(),
+    };
+
+    setMessages((prev) => [...prev, userMessage]);
+
+    setTimeout(() => {
+      const botMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        text: getBotResponse(reply),
+        sender: 'bot',
+        timestamp: new Date(),
+      };
+      setMessages((prev) => [...prev, botMessage]);
+    }, 800);
   };
 
   if (!isOpen) {
@@ -115,7 +132,7 @@ export default function AIChatbot() {
           </div>
           <div>
             <h3 className="font-bold">AI Assistant</h3>
-            <p className="text-xs text-brand-foreground/85">Always here to help</p>
+            <p className="text-xs text-brand-foreground/85">Marketing & SaaS help</p>
           </div>
         </div>
         <div className="flex items-center space-x-2">

@@ -20,7 +20,7 @@ export default function DigitalBusinessServicesPage() {
     { icon: CheckCircle2, text: 'Fast delivery', color: 'text-brand' },
     { icon: CheckCircle2, text: 'High-quality designs', color: 'text-accent' },
     { icon: CheckCircle2, text: 'Affordable pricing', color: 'text-warning-foreground' },
-    { icon: CheckCircle2, text: 'White-label work', color: 'text-vertical-crm' },
+    { icon: CheckCircle2, text: 'Agency white-label', color: 'text-vertical-crm' },
   ];
 
   return (
@@ -28,9 +28,9 @@ export default function DigitalBusinessServicesPage() {
       <div className="bg-brand text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Briefcase className="w-16 h-16 mx-auto mb-4" />
-          <h1 className="text-5xl lg:text-6xl font-bold mb-6">Digital Business Services</h1>
+          <h1 className="text-5xl lg:text-6xl font-bold mb-6">Web & Branding Services</h1>
           <p className="text-xl lg:text-2xl text-brand-foreground/85 max-w-4xl mx-auto leading-relaxed">
-            Modern digital services every business needs to succeed online
+            Professional websites, logos, and brand identity to establish your online presence
           </p>
         </div>
       </div>
@@ -38,9 +38,9 @@ export default function DigitalBusinessServicesPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Digital Business Essentials</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Web & Branding Essentials</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              E-Tailed Digital India provides modern digital services every business needs
+              Build a strong digital foundation with websites, branding, and hosting packages
             </p>
           </div>
 
@@ -86,7 +86,7 @@ export default function DigitalBusinessServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Get Your Digital Business Services</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">Get Your Web & Branding Package</h2>
               <p className="text-lg text-gray-600 mb-6">
                 Fill out the form and our team will get back to you within 24 hours with a customized quote.
               </p>
@@ -102,7 +102,7 @@ export default function DigitalBusinessServicesPage() {
                   <CheckCircle2 className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-semibold text-gray-900">White-Label Options</h4>
-                    <p className="text-gray-600">Resell under your own brand name</p>
+                    <p className="text-gray-600">Deliver under your own agency brand</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
@@ -115,7 +115,7 @@ export default function DigitalBusinessServicesPage() {
               </div>
             </div>
             <ServiceContactForm
-              serviceName="Digital Business Services"
+              serviceName="Web & Branding"
               serviceOptions={services}
             />
           </div>
@@ -124,18 +124,11 @@ export default function DigitalBusinessServicesPage() {
 
       <section className="py-20 bg-brand">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <h3 className="text-3xl font-bold mb-4">Ready to Start Your Digital Business?</h3>
+          <h3 className="text-3xl font-bold mb-4">Ready to Build Your Online Presence?</h3>
           <p className="text-xl text-brand-foreground/85 mb-8">
-            Get professional digital services delivered fast with white-label options
+            Get professional websites, branding, and hosting delivered fast
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-white text-brand hover:bg-gray-100"
-              onClick={() => window.location.hash = '#signup'}
-            >
-              Get Started Today
-            </Button>
             <Button
               size="lg"
               variant="outline"

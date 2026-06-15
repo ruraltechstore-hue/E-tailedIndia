@@ -6,40 +6,32 @@ export default function BlogsPage() {
   const blogs = [
     {
       id: 1,
-      title: 'How to Start a Digital Reselling Business in 2024',
-      excerpt: 'Learn the complete step-by-step guide to launching your own digital reselling business with minimal investment and maximum returns.',
+      title: 'How to Grow Your Business with Digital Marketing in 2025',
+      excerpt: 'A practical guide to launching SEO, paid ads, and social media campaigns that generate real leads and revenue.',
       author: 'Rahul Sharma',
       date: 'December 10, 2024',
-      category: 'Business',
+      category: 'Marketing',
       image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800',
-      content: `Starting a digital reselling business has never been easier. With platforms like E-Tailed Digital India, you can access 150+ digital services and resell them under your own brand.
+      content: `Growing your business online has never been more important. With E-Tailed Digital India, you get end-to-end digital marketing and SaaS solutions tailored to your goals.
 
-**Why Digital Reselling?**
+**Why Digital Marketing?**
 
-Digital reselling offers incredible advantages over traditional businesses:
-- Zero inventory costs
-- No shipping hassles
-- High profit margins
-- Work from anywhere
-- Scalable business model
+Digital marketing offers measurable advantages over traditional advertising:
+- Target the right audience with precision
+- Track ROI in real time
+- Scale campaigns as you grow
+- Lower cost per lead than offline channels
+- Build long-term brand presence
 
 **Getting Started**
 
-1. **Choose Your Niche**: Focus on specific services like websites, social media, or automations
-2. **Set Your Pricing**: Add your profit margin to base costs
-3. **Market Your Services**: Use social media, local networking, and online platforms
-4. **Deliver Quality**: Partner with reliable providers like E-Tailed Digital India
-5. **Build Relationships**: Focus on customer satisfaction for repeat business
+1. **Define Your Goals**: Leads, sales, brand awareness, or app downloads
+2. **Choose Your Channels**: SEO, Google Ads, Meta Ads, or social media
+3. **Set Up Tracking**: Analytics, pixels, and conversion tracking
+4. **Launch & Optimize**: Start campaigns, test creatives, and improve weekly
+5. **Scale What Works**: Double down on channels with the best ROI
 
-**Success Tips**
-
-- Start small and scale gradually
-- Focus on one category initially
-- Provide excellent customer support
-- Use testimonials and case studies
-- Keep learning and adapting
-
-With dedication and the right platform, you can build a thriving digital reselling business in months.`,
+With the right strategy and partner, you can build a thriving online presence in months.`,
     },
     {
       id: 2,
@@ -506,7 +498,7 @@ Don't wait—start automating your business today and gain a competitive edge!`,
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl lg:text-6xl font-bold mb-6">Blog & Resources</h1>
           <p className="text-xl lg:text-2xl text-brand-foreground/85 max-w-4xl mx-auto leading-relaxed">
-            Expert insights, guides, and tips for growing your digital business
+            Expert insights on digital marketing, SaaS growth, and business automation
           </p>
         </div>
       </div>

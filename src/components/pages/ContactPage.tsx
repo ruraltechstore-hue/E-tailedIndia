@@ -54,8 +54,8 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: 'Phone & WhatsApp',
-      details: '+91 8125752562',
-      link: 'tel:+918125752562',
+      details: '+91 93928 98733, +91 9390168733',
+      link: 'tel:+919392898733',
       color: '#009933',
     },
     {
@@ -97,7 +97,7 @@ export default function ContactPage() {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Whether you're interested in becoming a partner, need support, or have questions about
+                Whether you need digital marketing, a custom SaaS product, or partnership opportunities,
                 our services, our team is ready to assist you.
               </p>
 
@@ -151,7 +151,7 @@ export default function ContactPage() {
                     </p>
                     <Button
                       className="bg-white text-accent hover:bg-gray-100"
-                      onClick={() => window.open('https://wa.me/918125752562', '_blank')}
+                      onClick={() => window.open('https://wa.me/919392898733', '_blank')}
                     >
                       Open WhatsApp Chat
                     </Button>
@@ -312,11 +312,11 @@ export default function ContactPage() {
             <Card>
               <CardBody className="p-6">
                 <h3 className="font-bold text-lg text-gray-900 mb-2">
-                  Do you provide training and onboarding?
+                  Do you offer partner onboarding?
                 </h3>
                 <p className="text-gray-600">
-                  Absolutely! All partners receive comprehensive training, video tutorials, and ongoing
-                  support to ensure success.
+                  Yes. Agency partners receive onboarding, sales resources, demo access, and ongoing
+                  support for digital marketing and SaaS delivery.
                 </p>
               </CardBody>
             </Card>
@@ -331,21 +331,36 @@ export default function ContactPage() {
             <p className="text-xl text-brand-foreground/85 mb-8">
               Don't hesitate to reach out. Our team is here to help you succeed!
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
               <Button
                 size="lg"
                 className="bg-white text-brand hover:bg-gray-100"
-                onClick={() => window.open('https://wa.me/918125752562', '_blank')}
+                onClick={() => window.open('https://wa.me/919392898733', '_blank')}
               >
-                WhatsApp: +91 8125752562
+                WhatsApp: +91 93928 98733
+              </Button>
+              <Button
+                size="lg"
+                className="bg-white text-brand hover:bg-gray-100"
+                onClick={() => window.open('https://wa.me/919390168733', '_blank')}
+              >
+                WhatsApp: +91 9390168733
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="border-2 border-white text-white hover:bg-white/10"
-                onClick={() => window.open('tel:+918125752562')}
+                onClick={() => window.open('tel:+919392898733')}
               >
-                Call: +91 8125752562
+                Call: +91 93928 98733
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-white text-white hover:bg-white/10"
+                onClick={() => window.open('tel:+919390168733')}
+              >
+                Call: +91 9390168733
               </Button>
             </div>
           </div>

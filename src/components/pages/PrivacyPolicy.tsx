@@ -148,7 +148,7 @@ export default function PrivacyPolicy() {
               <li><strong>Withdraw Consent:</strong> Withdraw consent for data processing (may limit service access)</li>
             </ul>
             <p className="mt-4 text-gray-700">
-              To exercise these rights, contact us at: <strong>support@e-tailedindia.com</strong> or call <strong>+91 8125752562</strong>
+              To exercise these rights, contact us at: <strong>support@e-tailedindia.com</strong> or call <strong>+91 93928 98733</strong> / <strong>+91 9390168733</strong>
             </p>
           </CardBody>
         </Card>
@@ -217,8 +217,8 @@ export default function PrivacyPolicy() {
               <p><strong>Company:</strong> Etailed Digital Services Pvt. Ltd.</p>
               <p><strong>Address:</strong> Sai Silicon Heights, 3-118, Megha Hills Rd, Ayyappa Society, Mega Hills, Madhapur, Hyderabad, Telangana 500081, India</p>
               <p><strong>Email:</strong> support@e-tailedindia.com</p>
-              <p><strong>Phone:</strong> +91 8125752562</p>
-              <p><strong>WhatsApp:</strong> +91 8125752562</p>
+              <p><strong>Phone:</strong> +91 93928 98733, +91 9390168733</p>
+              <p><strong>WhatsApp:</strong> +91 93928 98733, +91 9390168733</p>
             </div>
           </CardBody>
         </Card>

@@ -1,466 +1,225 @@
-import { Check, Users, Building2, Globe, Rocket, Crown, TrendingUp, Shield, Handshake, Zap, Award, Target, Package, Building, Code, Truck, MapPin } from 'lucide-react';
+import {
+  Check,
+  Users,
+  Building2,
+  Globe,
+  TrendingUp,
+  Shield,
+  Handshake,
+  Zap,
+  Award,
+  Target,
+  Megaphone,
+  Cloud,
+  Layers,
+  BarChart3,
+  MessageSquare,
+  FileCheck,
+  Rocket,
+} from 'lucide-react';
 import Button from '../ui/Button';
+import Card, { CardBody } from '../ui/Card';
 
 export default function PartnerWithUsPage() {
-  const partnershipTiers = [
+  const partnershipModels = [
     {
-      type: 'Retailer',
-      price: '10,000',
-      icon: Building2,
-      color: 'bg-tier-retailer',
-      benefits: [
-        'Access to 150+ Services',
-        'White-Label Dashboard',
-        'Basic Training & Onboarding',
-        'Email Support',
-        'Marketing Resources',
-        'Standard Commission Rates',
-      ],
+      icon: Megaphone,
+      title: 'Marketing Agency Partner',
+      description:
+        'White-label SEO, paid ads, social media, and content marketing. We fulfill campaigns while you manage client relationships.',
+      highlights: ['SEO & Google Ads', 'Social media management', 'Lead generation funnels', 'Monthly reporting'],
+      color: '#0052cc',
     },
     {
-      type: 'Distributor',
-      price: '15,000',
-      icon: Crown,
-      color: 'bg-tier-distributor',
-      popular: true,
-      benefits: [
-        'Everything in Retailer',
-        'Priority Customer Support',
-        'Advanced Training Program',
-        'Enhanced Marketing Materials',
-        'Sub-Partner Management',
-        'Higher Commission Rates',
-        'Dedicated Dashboard Features',
-      ],
+      icon: Cloud,
+      title: 'SaaS Solutions Partner',
+      description:
+        'Resell and deploy CRM, ERP, HRMS, LMS, and custom SaaS products. We handle development, hosting, and support.',
+      highlights: ['CRM & ERP deployment', 'Custom SaaS builds', 'Hosting & maintenance', 'Client onboarding'],
+      color: '#009933',
     },
     {
-      type: 'Super Distributor',
-      price: '25,000',
-      icon: Rocket,
-      color: 'bg-tier-super',
-      benefits: [
-        'Everything in Distributor',
-        'Dedicated Account Manager',
-        'Custom Branding',
-        'API Access',
-        'Premium Commission Rates',
-        'Territory Rights',
-        'Priority Feature Requests',
-      ],
-    },
-    {
-      type: 'White Label',
-      price: '80,000',
-      icon: Package,
-      color: 'bg-tier-white-label',
-      benefits: [
-        'Complete White-Label Solution',
-        'Your Own Brand Identity',
-        'Custom Domain & Hosting',
-        'Full Dashboard Control',
-        'Unlimited Sub-Partners',
-        'Maximum Commission Rates',
-        'Dedicated Technical Team',
-        'Custom Feature Development',
-      ],
-    },
-    {
-      type: 'Pincode Franchise',
-      price: '82,000',
-      icon: MapPin,
-      color: 'bg-tier-pincode',
-      benefits: [
-        'Single Pincode Territory',
-        'Up to 5 Delivery Boys Recruitment',
-        'Complete Training Program',
-        'Delivery Management System',
-        'Real-Time Order Tracking',
-        'Customer Support',
-        'Marketing Materials',
-        'Commission on Every Delivery',
-      ],
-    },
-    {
-      type: '5 Pincode Franchise',
-      price: '1,18,000',
-      icon: MapPin,
-      color: 'bg-tier-pincode-5',
-      benefits: [
-        'Five Pincode Territories',
-        'Up to 15 Delivery Boys Recruitment',
-        'Advanced Training Program',
-        'Multi-Location Management',
-        'Real-Time Fleet Tracking',
-        'Priority Customer Support',
-        'Enhanced Marketing Kit',
-        'Higher Commission Rates',
-      ],
-    },
-    {
-      type: 'Enterprise Software',
-      price: '2,00,000',
-      icon: Building,
-      color: 'bg-tier-enterprise',
-      benefits: [
-        'Complete Enterprise Solution',
-        'Multi-Location Support',
-        'Advanced Analytics & Reports',
-        'Custom Integrations',
-        'Dedicated Infrastructure',
-        'Priority Support 24/7',
-        'Training for Teams',
-        'SLA Guarantee',
-      ],
-    },
-    {
-      type: 'Full Admin (No Source)',
-      price: '4,50,000',
-      icon: Code,
-      color: 'bg-tier-admin-ns',
-      benefits: [
-        'Complete Admin Software',
-        'Full Control Panel',
-        'All Features Unlocked',
-        'Lifetime License',
-        'Free Updates for 1 Year',
-        'Installation Support',
-        'No Source Code Access',
-        'Priority Technical Support',
-      ],
-    },
-    {
-      type: 'Full Admin (With Source)',
-      price: '6,00,000',
-      icon: Code,
-      color: 'bg-tier-admin-src',
+      icon: Layers,
+      title: 'White-Label Partner',
+      description:
+        'Offer the full E-Tailed portfolio under your brand — marketing, web, automation, and SaaS with complete backend delivery.',
+      highlights: ['Your brand, our delivery', 'Unlimited client projects', 'Dedicated account manager', 'Sales & demo resources'],
+      color: '#ff9933',
       featured: true,
-      benefits: [
-        'Everything in No Source',
-        'Complete Source Code',
-        'Full Ownership Rights',
-        'Modify & Customize',
-        'Unlimited Deployments',
-        'No Licensing Restrictions',
-        'Technical Documentation',
-        'Developer Support',
-      ],
     },
     {
-      type: 'Logistics Delivery',
-      price: '2,36,000',
-      icon: Truck,
-      color: 'bg-tier-logistics',
-      benefits: [
-        'Complete Delivery System',
-        'Real-Time Tracking',
-        'Rider Management',
-        'Route Optimization',
-        'Order Management',
-        'Customer App & Web',
-        'Rider Mobile App',
-        'Admin Dashboard',
-      ],
+      icon: BarChart3,
+      title: 'Enterprise Partner',
+      description:
+        'For agencies and businesses scaling multi-location marketing stacks, custom integrations, and enterprise SaaS rollouts.',
+      highlights: ['Multi-brand campaigns', 'API & integrations', 'SLA-backed support', 'Team training'],
+      color: '#e91e63',
     },
   ];
 
   const benefits = [
     {
-      icon: Crown,
-      title: 'White-Label Solutions',
-      description: 'Resell all our services under your own brand name and build your digital empire',
+      icon: Award,
+      title: 'White-Label Delivery',
+      description: 'Offer digital marketing and SaaS services under your own brand with full backend fulfillment',
     },
     {
       icon: Globe,
-      title: '150+ Digital Services',
-      description: 'Access comprehensive portfolio of digital, financial, and e-commerce services',
+      title: 'Complete Service Portfolio',
+      description: 'Marketing, web development, automation, SaaS products, and analytics — all in one partnership',
     },
     {
       icon: TrendingUp,
-      title: 'High Profit Margins',
-      description: 'Earn attractive commissions and recurring revenue from every service you sell',
+      title: 'Recurring Revenue',
+      description: 'Earn from monthly retainers, SaaS subscriptions, project work, and long-term client contracts',
     },
     {
       icon: Shield,
-      title: 'Complete Backend Support',
-      description: 'We handle all technical operations, fulfillment, and customer support',
+      title: 'Full Technical Support',
+      description: 'We handle development, deployment, campaign execution, and ongoing client fulfillment',
     },
     {
       icon: Zap,
-      title: 'Quick Onboarding',
-      description: 'Start your digital business in just 24-48 hours after approval',
+      title: 'Fast Onboarding',
+      description: 'Get partner resources, demos, and training within 48 hours of approval',
     },
     {
-      icon: Award,
-      title: 'Training & Resources',
-      description: 'Get comprehensive training materials, marketing assets, and business tools',
+      icon: Target,
+      title: 'Sales Enablement',
+      description: 'Case studies, pitch decks, demo accounts, and co-selling support for your team',
     },
   ];
 
   const services = [
     {
-      category: 'Digital Business Services',
-      items: [
-        'Pan Card Services',
-        'Aadhaar Services',
-        'Voter ID Card',
-        'Ration Card',
-        'Driving License',
-        'Passport Services',
-        'Income Certificate',
-        'Caste Certificate',
-        'Birth Certificate',
-        'Death Certificate',
-        'Marriage Certificate',
-        'MSME Registration',
-        'GST Registration',
-        'Company Registration',
-        'Trademark Registration',
-        'Copyright Registration',
-        'ISO Certification',
-        'FSSAI License',
-        'Digital Signature',
-        'IEC Code',
-      ],
-    },
-    {
-      category: 'Bill Payment & Recharge',
-      items: [
-        'Mobile Recharge',
-        'DTH Recharge',
-        'Electricity Bill',
-        'Water Bill',
-        'Gas Bill',
-        'Broadband Bill',
-        'Landline Bill',
-        'Credit Card Bill',
-        'Loan EMI Payment',
-        'Insurance Premium',
-        'Municipal Tax',
-        'Education Fee',
-        'Hospital Bills',
-        'Cable TV Bill',
-      ],
-    },
-    {
-      category: 'Travel & Booking',
-      items: [
-        'Flight Booking',
-        'Bus Booking',
-        'Train Booking',
-        'Hotel Booking',
-        'Cab Booking',
-        'Holiday Packages',
-        'Visa Assistance',
-        'Travel Insurance',
-        'Airport Transfers',
-        'Car Rentals',
-      ],
-    },
-    {
-      category: 'Financial Services',
-      items: [
-        'Money Transfer (DMT)',
-        'AEPS Services',
-        'Micro ATM',
-        'Account Opening',
-        'Loan Services',
-        'Insurance Services',
-        'Mutual Funds',
-        'FD/RD Services',
-        'Investment Advisory',
-        'Tax Filing',
-      ],
-    },
-    {
-      category: 'Website & E-Commerce',
-      items: [
-        'Business Website',
-        'E-Commerce Store',
-        'Portfolio Website',
-        'Blog Website',
-        'Landing Pages',
-        'Mobile Apps (Android)',
-        'Mobile Apps (iOS)',
-        'Progressive Web Apps',
-        'Domain Registration',
-        'Web Hosting',
-        'SSL Certificates',
-        'Email Hosting',
-        'Website Maintenance',
-        'SEO Services',
-      ],
-    },
-    {
-      category: 'Social Media Services',
-      items: [
-        'Instagram Followers',
-        'Instagram Likes',
-        'Instagram Views',
-        'YouTube Subscribers',
-        'YouTube Views',
-        'YouTube Likes',
-        'Facebook Page Likes',
-        'Facebook Post Likes',
-        'Twitter Followers',
-        'LinkedIn Connections',
-        'Social Media Management',
-        'Content Creation',
-        'Post Scheduling',
-        'Analytics & Reports',
-      ],
-    },
-    {
       category: 'Digital Marketing',
       items: [
-        'Google Ads',
-        'Facebook Ads',
-        'Instagram Ads',
-        'YouTube Ads',
-        'SEO Optimization',
-        'Content Marketing',
-        'Email Marketing',
-        'SMS Marketing',
-        'WhatsApp Marketing',
-        'Influencer Marketing',
-        'Affiliate Marketing',
-        'Video Marketing',
+        'SEO & organic growth',
+        'Google Ads & Meta Ads',
+        'Social media management',
+        'Content marketing',
+        'Email & WhatsApp campaigns',
+        'Influencer marketing',
+        'Analytics & reporting',
+      ],
+    },
+    {
+      category: 'SaaS Products',
+      items: [
+        'CRM systems',
+        'ERP & HRMS',
+        'LMS platforms',
+        'Booking & appointment apps',
+        'E-commerce SaaS',
+        'Industry-specific software',
+        'White-label deployment',
       ],
     },
     {
       category: 'Automation & CRM',
       items: [
-        'WhatsApp Automation',
         'WhatsApp Business API',
-        'CRM Systems',
-        'Lead Management',
-        'Email Automation',
-        'Sales Funnels',
-        'Marketing Automation',
-        'Chatbot Development',
-        'Workflow Automation',
-        'Integration Services',
+        'Lead capture funnels',
+        'Email automation',
+        'Sales pipeline setup',
+        'Chatbot development',
+        'Marketing automation',
+        'CRM integrations',
+      ],
+    },
+    {
+      category: 'Web & E-Commerce',
+      items: [
+        'Business websites',
+        'E-commerce stores',
+        'Landing pages',
+        'Mobile apps',
+        'Domain & hosting',
+        'Website maintenance',
+        'Conversion optimization',
+      ],
+    },
+    {
+      category: 'Branding & Creative',
+      items: [
+        'Logo & brand identity',
+        'Ad creatives',
+        'Social media graphics',
+        'Video & reel production',
+        'Brochures & print',
+        'Pitch decks',
+        'UI/UX design',
       ],
     },
     {
       category: 'Business Systems',
       items: [
-        'Accounting Software',
-        'Billing Software',
-        'Inventory Management',
-        'POS Systems',
-        'HR Management',
-        'Payroll Systems',
-        'Attendance System',
-        'Project Management',
-        'Customer Portal',
-        'Vendor Portal',
-      ],
-    },
-    {
-      category: 'Branding & Design',
-      items: [
-        'Logo Design',
-        'Business Card Design',
-        'Letterhead Design',
-        'Brochure Design',
-        'Flyer Design',
-        'Poster Design',
-        'Banner Design',
-        'Social Media Graphics',
-        'Packaging Design',
-        'Brand Identity',
-      ],
-    },
-    {
-      category: 'Printing Services',
-      items: [
-        'Business Cards',
-        'Letterheads',
-        'Envelopes',
-        'Brochures',
-        'Flyers',
-        'Posters',
-        'Banners',
-        'Visiting Cards',
-        'ID Cards',
-        'Certificates',
-        'Invoices',
-        'Receipt Books',
-      ],
-    },
-    {
-      category: 'SaaS Software',
-      items: [
-        'School Management System',
-        'Hospital Management System',
-        'Hotel Management System',
-        'Restaurant POS',
-        'Gym Management',
-        'Salon Management',
-        'Real Estate Portal',
-        'Job Portal',
-        'Matrimonial Portal',
-        'Classified Portal',
-      ],
-    },
-    {
-      category: 'GPL Marketplace',
-      items: [
-        'WordPress Themes',
-        'WordPress Plugins',
-        'PHP Scripts',
-        'Laravel Scripts',
-        'React Templates',
-        'Vue Templates',
-        'Angular Templates',
-        'Mobile App Templates',
-        'Admin Templates',
-        'Landing Page Templates',
-      ],
-    },
-    {
-      category: 'Education & Training',
-      items: [
-        'Digital Marketing Course',
-        'Web Development Course',
-        'App Development Course',
-        'Graphic Design Course',
-        'Video Editing Course',
-        'Business Training',
-        'Sales Training',
-        'Certification Programs',
-        'Internship Programs',
+        'POS & billing',
+        'Inventory management',
+        'Project management',
+        'Customer portals',
+        'Multi-location dashboards',
+        'Reporting systems',
+        'Workflow tools',
       ],
     },
   ];
 
   const stats = [
-    { number: '150+', label: 'Digital Services' },
-    { number: '10,000+', label: 'Active Partners' },
-    { number: '50L+', label: 'Monthly Transactions' },
-    { number: '24/7', label: 'Support Available' },
+    { number: '50+', label: 'SaaS Products' },
+    { number: '500+', label: 'Clients Served' },
+    { number: '8', label: 'Service Categories' },
+    { number: '24/7', label: 'Partner Support' },
   ];
 
   const whyPartner = [
     {
       icon: Building2,
-      title: 'No Infrastructure Needed',
-      description: 'Start your digital services business without any technical infrastructure or inventory',
+      title: 'No In-House Team Required',
+      description: 'Deliver enterprise-grade marketing and SaaS without hiring developers, designers, or media buyers',
     },
     {
       icon: Users,
       title: 'Massive Market Opportunity',
-      description: 'Tap into India\'s growing digital economy worth billions of dollars',
+      description: 'Every business in India needs digital presence, lead generation, and software — you supply the demand',
     },
     {
       icon: Handshake,
-      title: 'Trusted Partnership',
-      description: 'Partner with E-Tailed Digital Services Pvt. Ltd., a registered and verified company',
+      title: 'Trusted Delivery Partner',
+      description: 'E-Tailed Digital Services Pvt. Ltd. — registered, proven, and built for agency-scale fulfillment',
     },
     {
-      icon: Target,
-      title: 'Multiple Revenue Streams',
-      description: 'Earn from services, commissions, recurring subscriptions, and referrals',
+      icon: Rocket,
+      title: 'Scale Without Limits',
+      description: 'Take on more clients without capacity constraints — we grow with your agency',
+    },
+  ];
+
+  const steps = [
+    {
+      icon: MessageSquare,
+      title: 'Discovery Call',
+      description: 'Tell us about your agency, clients, and the marketing or SaaS services you want to offer',
+    },
+    {
+      icon: FileCheck,
+      title: 'Partnership Setup',
+      description: 'We align on white-label terms, service scope, and onboarding for your team',
+    },
+    {
+      icon: Zap,
+      title: 'Onboarding & Training',
+      description: 'Access partner portal, sales materials, demo accounts, and fulfillment workflows',
+    },
+    {
+      icon: Rocket,
+      title: 'Start Delivering',
+      description: 'Pitch to clients under your brand — we execute campaigns and SaaS deployments behind the scenes',
+    },
+    {
+      icon: TrendingUp,
+      title: 'Grow Together',
+      description: 'Expand into new services, retainers, and SaaS subscriptions with ongoing partner support',
     },
   ];
 
@@ -470,15 +229,26 @@ export default function PartnerWithUsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl lg:text-6xl font-bold mb-6">Partner With Us</h1>
           <p className="text-xl lg:text-2xl text-brand-foreground/85 max-w-4xl mx-auto leading-relaxed mb-8">
-            Join India's fastest-growing digital services platform and build your own digital empire
+            Grow your agency with white-label digital marketing campaigns and SaaS solutions —
+            we deliver, you own the client relationship
           </p>
-          <Button
-            size="lg"
-            onClick={() => window.location.hash = '#apply-page'}
-            className="bg-white text-brand hover:bg-brand-muted"
-          >
-            Apply Now
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              onClick={() => window.location.hash = '#contact-page'}
+              className="bg-white text-brand hover:bg-brand-muted"
+            >
+              Book a Partnership Call
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-2 border-white text-white hover:bg-white/10"
+              onClick={() => window.location.hash = '#apply-page'}
+            >
+              Apply Now
+            </Button>
+          </div>
         </div>
       </div>
 
@@ -495,101 +265,77 @@ export default function PartnerWithUsPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white overflow-visible">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-visible">
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Choose Your Partnership Plan
+              Partnership Models
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Select the perfect plan to start or scale your digital services business
+              Flexible ways to partner — whether you focus on marketing, SaaS, or full-stack digital delivery
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 gap-y-10 mb-16 pt-6 overflow-visible">
-            {partnershipTiers.map((tier) => {
-              const Icon = tier.icon;
+          <div className="grid md:grid-cols-2 gap-8">
+            {partnershipModels.map((model, index) => {
+              const Icon = model.icon;
               return (
-                <div
-                  key={tier.type}
-                  className={`relative overflow-visible rounded-2xl ${
-                    tier.featured
-                      ? 'z-20 border-4 border-tier-premium-badge shadow-2xl lg:col-span-4 md:col-span-2'
-                      : tier.popular
-                      ? 'z-20 border-4 border-accent shadow-2xl'
-                      : 'z-0 border-2 border-gray-200 shadow-lg'
-                  } bg-white`}
+                <Card
+                  key={index}
+                  hover
+                  className={model.featured ? 'ring-2 ring-brand shadow-xl' : ''}
                 >
-                  {tier.popular && (
-                    <div className="pointer-events-none absolute left-1/2 top-0 z-30 -translate-x-1/2 -translate-y-1/2">
-                      <span className="inline-block whitespace-nowrap rounded-full bg-tier-distributor px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-white shadow-md sm:px-6 sm:py-2 sm:text-sm">
-                        Most popular
+                  <CardBody className="p-8">
+                    {model.featured && (
+                      <span className="inline-block mb-4 px-3 py-1 bg-brand text-white text-xs font-bold uppercase tracking-wide rounded-full">
+                        Most Popular
                       </span>
+                    )}
+                    <div
+                      className="w-14 h-14 rounded-xl flex items-center justify-center mb-5"
+                      style={{ backgroundColor: `${model.color}20` }}
+                    >
+                      <Icon className="w-7 h-7" style={{ color: model.color }} />
                     </div>
-                  )}
-                  {tier.featured && (
-                    <div className="pointer-events-none absolute left-1/2 top-0 z-30 -translate-x-1/2 -translate-y-1/2">
-                      <span className="inline-block whitespace-nowrap rounded-full bg-tier-premium-badge px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-white shadow-md sm:px-6 sm:py-2 sm:text-sm">
-                        Premium option
-                      </span>
-                    </div>
-                  )}
-                  <div
-                    className={`p-6 ${tier.popular || tier.featured ? 'pt-9 sm:pt-10' : ''} ${
-                      tier.featured ? 'md:flex md:items-center md:gap-8' : ''
-                    }`}
-                  >
-                    <div className={tier.featured ? 'md:w-1/3' : ''}>
-                      <div className={`w-16 h-16 ${tier.color} rounded-xl flex items-center justify-center mb-4 mx-auto`}>
-                        <Icon className="w-8 h-8 text-white" />
-                      </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2 text-center">{tier.type}</h3>
-                      <div className="text-center mb-4">
-                        <div className="text-4xl font-bold text-gray-900 mb-1">
-                          ₹{tier.price}
-                        </div>
-                        <p className="text-gray-600 text-sm">One-time investment</p>
-                      </div>
-                    </div>
-                    <div className={tier.featured ? 'md:w-2/3' : ''}>
-                      <ul className={`space-y-2 mb-6 ${tier.featured ? 'md:grid md:grid-cols-2 md:gap-x-4' : ''}`}>
-                        {tier.benefits.map((benefit, idx) => (
-                          <li key={idx} className="flex items-start">
-                            <Check className="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" />
-                            <span className="text-gray-700 text-sm">{benefit}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      <Button
-                        size="lg"
-                        onClick={() => window.location.hash = '#apply-page'}
-                        className={`w-full ${tier.color} text-white`}
-                      >
-                        Get Started
-                      </Button>
-                    </div>
-                  </div>
-                </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">{model.title}</h3>
+                    <p className="text-gray-600 leading-relaxed mb-6">{model.description}</p>
+                    <ul className="space-y-2 mb-6">
+                      {model.highlights.map((item, idx) => (
+                        <li key={idx} className="flex items-start">
+                          <Check className="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-700 text-sm">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Button
+                      size="lg"
+                      className="w-full"
+                      onClick={() => window.location.hash = '#contact-page'}
+                    >
+                      Discuss This Model
+                    </Button>
+                  </CardBody>
+                </Card>
               );
             })}
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-brand-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               Why Partner With E-Tailed Digital India?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Build a successful digital services business with complete support and proven systems
+              The backend team your agency needs for marketing and SaaS at scale
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 gap-8">
             {whyPartner.map((item, index) => (
-              <div key={index} className="bg-brand-muted rounded-2xl p-8">
+              <div key={index} className="bg-white rounded-2xl p-8 shadow-sm">
                 <div className="w-14 h-14 bg-brand rounded-xl flex items-center justify-center mb-4">
                   <item.icon className="w-7 h-7 text-white" />
                 </div>
@@ -601,20 +347,20 @@ export default function PartnerWithUsPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-brand-muted">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Partnership Benefits
+              What You Get as a Partner
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Everything you need to succeed as a digital services partner
+              Everything required to sell and deliver digital marketing and SaaS under your brand
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+              <div key={index} className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow">
                 <div className="w-14 h-14 bg-brand rounded-xl flex items-center justify-center mb-4">
                   <benefit.icon className="w-7 h-7 text-white" />
                 </div>
@@ -626,20 +372,20 @@ export default function PartnerWithUsPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-brand-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              150+ Services You Can Offer
+              Services You Can Offer Clients
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Access our complete catalog of digital services across multiple categories
+              A complete digital marketing and SaaS catalog — fulfilled by our team, sold by yours
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
-              <div key={index} className="bg-gray-50 rounded-2xl p-6">
+              <div key={index} className="bg-white rounded-2xl p-6 shadow-sm">
                 <h3 className="text-lg font-bold text-gray-900 mb-4">{service.category}</h3>
                 <ul className="space-y-2">
                   {service.items.map((item, itemIndex) => (
@@ -657,77 +403,65 @@ export default function PartnerWithUsPage() {
 
       <section className="py-20 bg-brand text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                How It Works
-              </h2>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6">How Partnership Works</h2>
+              <p className="text-lg text-brand-foreground/85 mb-8">
+                A simple path from first conversation to delivering marketing and SaaS for your clients
+              </p>
               <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="w-10 h-10 bg-white text-brand rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">
-                    1
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Choose Your Plan</h3>
-                    <p className="text-brand-foreground/85">Select from 8 different partnership plans based on your business goals and investment capacity</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-10 h-10 bg-white text-brand rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">
-                    2
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Submit Application</h3>
-                    <p className="text-brand-foreground/85">Fill the application form with your details and business information</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-10 h-10 bg-white text-brand rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">
-                    3
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Make Payment</h3>
-                    <p className="text-brand-foreground/85">Pay the one-time partnership fee for your chosen plan</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-10 h-10 bg-white text-brand rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">
-                    4
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Get Approved</h3>
-                    <p className="text-brand-foreground/85">We review your application within 24-48 hours</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-10 h-10 bg-white text-brand rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">
-                    5
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Start Earning</h3>
-                    <p className="text-brand-foreground/85">Access partner dashboard and start offering services to your customers</p>
-                  </div>
-                </div>
+                {steps.map((step, index) => {
+                  const Icon = step.icon;
+                  return (
+                    <div key={index} className="flex items-start">
+                      <div className="w-10 h-10 bg-white text-brand rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0 text-sm">
+                        {index + 1}
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <Icon className="w-5 h-5 text-brand-foreground/85" />
+                          <h3 className="text-xl font-bold">{step.title}</h3>
+                        </div>
+                        <p className="text-brand-foreground/85">{step.description}</p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8">
-              <h3 className="text-2xl font-bold mb-6">Quick Price Comparison</h3>
-              <div className="space-y-3">
-                {partnershipTiers.slice(0, 4).map((tier) => (
-                  <div key={tier.type} className="bg-white/20 rounded-xl p-4">
-                    <div className="flex items-center justify-between">
-                      <span className="font-bold">{tier.type}</span>
-                      <span className="text-xl font-bold">₹{tier.price}</span>
-                    </div>
-                  </div>
+              <h3 className="text-2xl font-bold mb-4">Ready to Partner?</h3>
+              <p className="text-brand-foreground/85 mb-6">
+                Whether you are an agency, freelancer, or business looking to expand into digital
+                marketing and SaaS — we will tailor a partnership to your goals.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  'Free partnership consultation',
+                  'No technical team required',
+                  'White-label under your brand',
+                  'Marketing + SaaS in one place',
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-center gap-2">
+                    <Check className="w-5 h-5 text-accent flex-shrink-0" />
+                    <span className="text-brand-foreground/90">{item}</span>
+                  </li>
                 ))}
-              </div>
+              </ul>
               <Button
                 size="lg"
-                onClick={() => window.location.hash = '#apply-page'}
-                className="w-full mt-6 bg-white text-brand hover:bg-brand-muted"
+                onClick={() => window.location.hash = '#contact-page'}
+                className="w-full bg-white text-brand hover:bg-brand-muted"
               >
-                Apply for Partnership Now
+                Contact Us
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => window.location.hash = '#apply-page'}
+                className="w-full mt-3 border-2 border-white text-white hover:bg-white/10"
+              >
+                Submit Application
               </Button>
             </div>
           </div>
@@ -737,18 +471,24 @@ export default function PartnerWithUsPage() {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Ready to Start Your Digital Business?
+            Let's Build Something Together
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Join thousands of successful partners across India who are building profitable digital businesses
+            Partner with E-Tailed Digital India and offer world-class digital marketing and SaaS
+            solutions to your clients
           </p>
-          <Button
-            size="lg"
-            onClick={() => window.location.hash = '#apply-page'}
-            className="bg-brand"
-          >
-            Apply for Partnership Now
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" onClick={() => window.location.hash = '#contact-page'}>
+              Get in Touch
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => window.location.hash = '#apply-page'}
+            >
+              Apply for Partnership
+            </Button>
+          </div>
         </div>
       </section>
     </div>

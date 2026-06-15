@@ -1,7 +1,7 @@
 import WhatsAppLogo from '../icons/WhatsAppLogo';
 
 export default function WhatsAppButton() {
-  const phoneNumber = '918125752562';
+  const phoneNumber = '919392898733';
   const message = 'Hello! I would like to know more about Etailed Digital India services.';
 
   const handleWhatsAppClick = () => {

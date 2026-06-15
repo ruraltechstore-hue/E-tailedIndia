@@ -148,7 +148,7 @@ export default function PartnerWithUs() {
 
   const handleInquiry = (packageName: string) => {
     const message = `Hi! I'm interested in the ${packageName} package. Please share more details.`;
-    const whatsappUrl = `https://wa.me/918125752562?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/919392898733?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -241,7 +241,7 @@ export default function PartnerWithUs() {
             <Button
               size="lg"
               className="bg-white text-brand hover:bg-gray-100"
-              onClick={() => window.open('https://wa.me/918125752562', '_blank')}
+              onClick={() => window.open('https://wa.me/919392898733', '_blank')}
             >
               WhatsApp Us
             </Button>

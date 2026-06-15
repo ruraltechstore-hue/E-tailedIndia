@@ -20,7 +20,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
-              Empowering every Indian village through digital, financial, and e-commerce inclusion.
+              Accelerating business growth with digital marketing, custom SaaS products, and automation solutions across India.
             </p>
             <div className="flex flex-wrap gap-3 mt-4">
               <a
@@ -84,11 +84,11 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-4">Services</h4>
             <ul className="space-y-2">
-              <li><a href="#digital-business" className="text-gray-400 hover:text-white transition-colors">Digital Business Services</a></li>
+              <li><a href="#digital-business" className="text-gray-400 hover:text-white transition-colors">Web & Branding</a></li>
               <li><a href="#website-ecommerce" className="text-gray-400 hover:text-white transition-colors">Website & E-Commerce</a></li>
               <li><a href="#social-media" className="text-gray-400 hover:text-white transition-colors">Social Media Services</a></li>
               <li><a href="#automations-crm" className="text-gray-400 hover:text-white transition-colors">Automations & CRM</a></li>
-              <li><a href="#education-internship" className="text-gray-400 hover:text-white transition-colors">Education & Internships</a></li>
+              <li><a href="#digital-marketing" className="text-gray-400 hover:text-white transition-colors">Digital Marketing & SaaS</a></li>
               <li><a href="#blogs-page" className="text-gray-400 hover:text-white transition-colors">Blog & Resources</a></li>
             </ul>
           </div>
@@ -104,7 +104,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-gray-300 flex-shrink-0" />
-                <span className="text-sm text-gray-400">+91 8125752562</span>
+                <span className="text-sm text-gray-400">+91 93928 98733</span>
+              </li>
+              <li className="flex items-center space-x-3">
+                <Phone className="w-5 h-5 text-gray-300 flex-shrink-0" />
+                <span className="text-sm text-gray-400">+91 9390168733</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-gray-300 flex-shrink-0" />

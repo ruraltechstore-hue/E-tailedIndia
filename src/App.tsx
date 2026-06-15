@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
-import { AuthProvider, useAuth } from './contexts/AuthContext';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
-import AuthModal from './components/auth/AuthModal';
 import HomePage from './components/pages/HomePage';
 import AboutPage from './components/pages/AboutPage';
 import AllServicesPage from './components/pages/AllServicesPage';
@@ -11,8 +9,7 @@ import WebsiteECommercePage from './components/pages/WebsiteECommercePage';
 import SocialMediaServicesPage from './components/pages/SocialMediaServicesPage';
 import AutomationsCRMPage from './components/pages/AutomationsCRMPage';
 import BusinessSystemsPage from './components/pages/BusinessSystemsPage';
-import GPLMarketplacePage from './components/pages/GPLMarketplacePage';
-import EducationInternshipPage from './components/pages/EducationInternshipPage';
+import DigitalMarketingPage from './components/pages/DigitalMarketingPage';
 import BrandingPrintingPage from './components/pages/BrandingPrintingPage';
 import SaaSSoftwarePage from './components/pages/SaaSSoftwarePage';
 import BlogsPage from './components/pages/BlogsPage';
@@ -20,7 +17,6 @@ import PartnerWithUsPage from './components/pages/PartnerWithUsPage';
 import ApplyNowPage from './components/pages/ApplyNowPage';
 import ContactPage from './components/pages/ContactPage';
 import FAQPage from './components/pages/FAQPage';
-import Dashboard from './components/pages/Dashboard';
 import PrivacyPolicy from './components/pages/PrivacyPolicy';
 import TermsAndConditions from './components/pages/TermsAndConditions';
 import RefundPolicy from './components/pages/RefundPolicy';
@@ -30,28 +26,15 @@ import CookiePolicy from './components/pages/CookiePolicy';
 import WhatsAppButton from './components/ui/WhatsAppButton';
 import AIChatbot from './components/ui/AIChatbot';
 
-type ViewType = 'home' | 'dashboard' | 'privacy' | 'terms' | 'refund' | 'shipping' | 'disclaimer' | 'cookie' | 'about' | 'services' | 'digital-business' | 'website-ecommerce' | 'social-media' | 'automations-crm' | 'business-systems' | 'gpl-marketplace' | 'education-internship' | 'branding-printing' | 'saas-software' | 'blogs' | 'partner' | 'apply' | 'contact' | 'faq';
+type ViewType = 'home' | 'privacy' | 'terms' | 'refund' | 'shipping' | 'disclaimer' | 'cookie' | 'about' | 'services' | 'digital-business' | 'website-ecommerce' | 'social-media' | 'automations-crm' | 'business-systems' | 'digital-marketing' | 'branding-printing' | 'saas-software' | 'blogs' | 'partner' | 'apply' | 'contact' | 'faq';
 
-function AppContent() {
-  const [authModalOpen, setAuthModalOpen] = useState(false);
-  const [authMode, setAuthMode] = useState<'login' | 'signup'>('login');
+function App() {
   const [currentView, setCurrentView] = useState<ViewType>('home');
-  const { user } = useAuth();
 
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.slice(1);
-      if (hash === 'login') {
-        setAuthMode('login');
-        setAuthModalOpen(true);
-        window.location.hash = '';
-      } else if (hash === 'signup') {
-        setAuthMode('signup');
-        setAuthModalOpen(true);
-        window.location.hash = '';
-      } else if (hash === 'dashboard' && user) {
-        setCurrentView('dashboard');
-      } else if (hash === 'privacy') {
+      if (hash === 'privacy') {
         setCurrentView('privacy');
       } else if (hash === 'terms') {
         setCurrentView('terms');
@@ -79,10 +62,8 @@ function AppContent() {
         setCurrentView('automations-crm');
       } else if (hash === 'business-systems') {
         setCurrentView('business-systems');
-      } else if (hash === 'gpl-marketplace') {
-        setCurrentView('gpl-marketplace');
-      } else if (hash === 'education-internship') {
-        setCurrentView('education-internship');
+      } else if (hash === 'digital-marketing' || hash === 'education-internship') {
+        setCurrentView('digital-marketing');
       } else if (hash === 'branding-printing') {
         setCurrentView('branding-printing');
       } else if (hash === 'saas-software') {
@@ -103,21 +84,8 @@ function AppContent() {
     handleHashChange();
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
-  }, [user]);
+  }, []);
 
-  // Dashboard view
-  if (currentView === 'dashboard' && user) {
-    return (
-      <div className="min-h-screen bg-white">
-        <Header />
-        <Dashboard />
-        <WhatsAppButton />
-        <AIChatbot />
-      </div>
-    );
-  }
-
-  // Legal pages
   if (currentView === 'privacy') {
     return (
       <div className="min-h-screen bg-white">
@@ -198,18 +166,12 @@ function AppContent() {
           <FAQPage />
         </div>
         <Footer />
-        <AuthModal
-          isOpen={authModalOpen}
-          onClose={() => setAuthModalOpen(false)}
-          mode={authMode}
-        />
         <WhatsAppButton />
         <AIChatbot />
       </div>
     );
   }
 
-  // Individual pages
   if (currentView === 'about') {
     return (
       <div className="min-h-screen bg-white">
@@ -218,11 +180,6 @@ function AppContent() {
           <AboutPage />
         </div>
         <Footer />
-        <AuthModal
-          isOpen={authModalOpen}
-          onClose={() => setAuthModalOpen(false)}
-          mode={authMode}
-        />
         <WhatsAppButton />
         <AIChatbot />
       </div>
@@ -237,11 +194,6 @@ function AppContent() {
           <AllServicesPage />
         </div>
         <Footer />
-        <AuthModal
-          isOpen={authModalOpen}
-          onClose={() => setAuthModalOpen(false)}
-          mode={authMode}
-        />
         <WhatsAppButton />
         <AIChatbot />
       </div>
@@ -318,26 +270,12 @@ function AppContent() {
     );
   }
 
-  if (currentView === 'gpl-marketplace') {
+  if (currentView === 'digital-marketing') {
     return (
       <div className="min-h-screen bg-white">
         <Header />
         <div className="pt-20">
-          <GPLMarketplacePage />
-        </div>
-        <Footer />
-        <WhatsAppButton />
-        <AIChatbot />
-      </div>
-    );
-  }
-
-  if (currentView === 'education-internship') {
-    return (
-      <div className="min-h-screen bg-white">
-        <Header />
-        <div className="pt-20">
-          <EducationInternshipPage />
+          <DigitalMarketingPage />
         </div>
         <Footer />
         <WhatsAppButton />
@@ -396,11 +334,6 @@ function AppContent() {
           <PartnerWithUsPage />
         </div>
         <Footer />
-        <AuthModal
-          isOpen={authModalOpen}
-          onClose={() => setAuthModalOpen(false)}
-          mode={authMode}
-        />
         <WhatsAppButton />
         <AIChatbot />
       </div>
@@ -415,11 +348,6 @@ function AppContent() {
           <ApplyNowPage />
         </div>
         <Footer />
-        <AuthModal
-          isOpen={authModalOpen}
-          onClose={() => setAuthModalOpen(false)}
-          mode={authMode}
-        />
         <WhatsAppButton />
         <AIChatbot />
       </div>
@@ -434,18 +362,12 @@ function AppContent() {
           <ContactPage />
         </div>
         <Footer />
-        <AuthModal
-          isOpen={authModalOpen}
-          onClose={() => setAuthModalOpen(false)}
-          mode={authMode}
-        />
         <WhatsAppButton />
         <AIChatbot />
       </div>
     );
   }
 
-  // Home page
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -453,22 +375,9 @@ function AppContent() {
         <HomePage />
       </main>
       <Footer />
-      <AuthModal
-        isOpen={authModalOpen}
-        onClose={() => setAuthModalOpen(false)}
-        mode={authMode}
-      />
       <WhatsAppButton />
       <AIChatbot />
     </div>
-  );
-}
-
-function App() {
-  return (
-    <AuthProvider>
-      <AppContent />
-    </AuthProvider>
   );
 }
 

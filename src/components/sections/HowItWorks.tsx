@@ -1,53 +1,53 @@
-import { UserPlus, FileCheck, Wallet, TrendingUp, Users, Award } from 'lucide-react';
+import { MessageSquare, FileSearch, Palette, Rocket, BarChart, Headphones } from 'lucide-react';
 import Card, { CardBody } from '../ui/Card';
 
 export default function HowItWorks() {
   const steps = [
     {
-      icon: UserPlus,
-      title: 'Register & KYC',
+      icon: MessageSquare,
+      title: 'Discovery Call',
       description:
-        'Sign up with your details, complete KYC verification with Aadhaar and PAN. Process takes 24-48 hours.',
+        'We understand your business goals, target audience, and current digital presence to craft the right strategy.',
       color: '#0052cc',
       step: '01',
     },
     {
-      icon: FileCheck,
-      title: 'Get Certified',
+      icon: FileSearch,
+      title: 'Strategy & Proposal',
       description:
-        'Receive your certificate, ID card, and login credentials. Access complete training materials and support.',
+        'Receive a tailored plan covering marketing channels, SaaS requirements, timelines, and transparent pricing.',
       color: '#009933',
       step: '02',
     },
     {
-      icon: Wallet,
-      title: 'Add Wallet Balance',
+      icon: Palette,
+      title: 'Design & Development',
       description:
-        'Top up your wallet via UPI or Net Banking. You\'re now ready to start offering services to customers.',
+        'Our team builds your campaigns, websites, automations, or custom SaaS product with regular progress updates.',
       color: '#ff9933',
       step: '03',
     },
     {
-      icon: TrendingUp,
-      title: 'Start Transactions',
+      icon: Rocket,
+      title: 'Launch & Go Live',
       description:
-        'Offer 114+ services to customers. Earn instant commission on every successful transaction.',
+        'Deploy your marketing campaigns, CRM systems, or SaaS platform with full testing and quality assurance.',
       color: '#e91e63',
       step: '04',
     },
     {
-      icon: Users,
-      title: 'Build Your Network',
+      icon: BarChart,
+      title: 'Optimize & Scale',
       description:
-        'Add retailers under you (as Distributor) and earn from their transactions. Grow your passive income.',
+        'Track performance with analytics, A/B testing, and continuous optimization to maximize ROI and growth.',
       color: '#00bcd4',
       step: '05',
     },
     {
-      icon: Award,
-      title: 'Scale & Earn',
+      icon: Headphones,
+      title: 'Ongoing Support',
       description:
-        'Upgrade to higher tiers, expand across regions, launch white-label portal. Sky is the limit!',
+        'Dedicated account management, monthly reports, and 24/7 support to keep your marketing and SaaS running smoothly.',
       color: '#9c27b0',
       step: '06',
     },
@@ -59,8 +59,8 @@ export default function HowItWorks() {
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">How It Works</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Start your digital business journey in 6 simple steps. Get started today and begin earning
-            within 24 hours!
+            From first consultation to ongoing growth — our proven 6-step process delivers
+            marketing and SaaS results that scale.
           </p>
         </div>
 
@@ -102,20 +102,20 @@ export default function HowItWorks() {
         <div className="grid md:grid-cols-3 gap-6">
           <Card>
             <CardBody className="p-6 text-center">
-              <div className="text-4xl font-bold text-brand mb-2">24 Hours</div>
-              <p className="text-gray-600">Approval Time</p>
+              <div className="text-4xl font-bold text-brand mb-2">48 Hours</div>
+              <p className="text-gray-600">Strategy Delivery</p>
             </CardBody>
           </Card>
           <Card>
             <CardBody className="p-6 text-center">
-              <div className="text-4xl font-bold text-accent mb-2">Zero</div>
-              <p className="text-gray-600">Monthly Fees</p>
+              <div className="text-4xl font-bold text-accent mb-2">Flexible</div>
+              <p className="text-gray-600">Pricing Plans</p>
             </CardBody>
           </Card>
           <Card>
             <CardBody className="p-6 text-center">
-              <div className="text-4xl font-bold text-warning-foreground mb-2">Lifetime</div>
-              <p className="text-gray-600">Earning Potential</p>
+              <div className="text-4xl font-bold text-warning-foreground mb-2">Measurable</div>
+              <p className="text-gray-600">ROI & Results</p>
             </CardBody>
           </Card>
         </div>

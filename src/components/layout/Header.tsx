@@ -1,11 +1,8 @@
 import { useState } from 'react';
-import { Menu, X, User } from 'lucide-react';
-import Button from '../ui/Button';
-import { useAuth } from '../../contexts/AuthContext';
+import { Menu, X } from 'lucide-react';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { user, profile, signOut } = useAuth();
 
   const navigation = [
     { name: 'Home', href: '#home' },
@@ -28,7 +25,7 @@ export default function Header() {
             />
             <div>
               <h1 className="text-xl font-bold text-gray-900">Etailed Digital India</h1>
-              <p className="text-xs text-gray-600">Empowering Every Citizen</p>
+              <p className="text-xs text-gray-600">Digital Marketing & SaaS Solutions</p>
             </div>
           </div>
 
@@ -42,34 +39,6 @@ export default function Header() {
                 {item.name}
               </a>
             ))}
-          </div>
-
-          <div className="hidden md:flex items-center space-x-4">
-            {user ? (
-              <>
-                <Button variant="outline" size="sm" onClick={() => window.location.hash = '#dashboard'}>
-                  Dashboard
-                </Button>
-                <div className="flex items-center space-x-2 px-4 py-2 bg-gray-100 rounded-lg">
-                  <User className="w-5 h-5 text-gray-600" />
-                  <span className="text-sm font-semibold text-gray-900">
-                    {profile?.full_name || 'User'}
-                  </span>
-                </div>
-                <Button onClick={signOut} variant="outline" size="sm">
-                  Logout
-                </Button>
-              </>
-            ) : (
-              <>
-                <Button variant="outline" size="sm" onClick={() => window.location.hash = '#login'}>
-                  Login
-                </Button>
-                <Button size="sm" onClick={() => window.location.hash = '#signup'}>
-                  Sign Up
-                </Button>
-              </>
-            )}
           </div>
 
           <button
@@ -94,36 +63,6 @@ export default function Header() {
                 {item.name}
               </a>
             ))}
-            <div className="pt-4 border-t border-gray-200 space-y-2">
-              {user ? (
-                <>
-                  <div className="flex items-center space-x-2 px-4 py-2 bg-gray-100 rounded-lg">
-                    <User className="w-5 h-5 text-gray-600" />
-                    <span className="text-sm font-semibold text-gray-900">
-                      {profile?.full_name || 'User'}
-                    </span>
-                  </div>
-                  <Button onClick={signOut} variant="outline" size="sm" className="w-full">
-                    Logout
-                  </Button>
-                </>
-              ) : (
-                <>
-                  <Button variant="outline" size="sm" className="w-full" onClick={() => {
-                    window.location.hash = '#login';
-                    setMobileMenuOpen(false);
-                  }}>
-                    Login
-                  </Button>
-                  <Button size="sm" className="w-full" onClick={() => {
-                    window.location.hash = '#signup';
-                    setMobileMenuOpen(false);
-                  }}>
-                    Sign Up
-                  </Button>
-                </>
-              )}
-            </div>
           </div>
         </div>
       )}

@@ -1,91 +1,91 @@
 import {
-  Wallet,
-  Users,
-  TrendingUp,
-  Shield,
+  Search,
+  Share2,
+  Target,
+  Cloud,
+  Bot,
+  BarChart3,
   Smartphone,
   Zap,
   Globe,
-  Award,
-  Clock,
+  PenTool,
   HeadphonesIcon,
-  BarChart3,
-  Lock,
+  Layers,
 } from 'lucide-react';
 import Card, { CardBody } from '../ui/Card';
 
 export default function Features() {
   const features = [
     {
-      icon: Wallet,
-      title: 'Instant Wallet System',
-      description: 'Real-time wallet with instant top-up, automatic commission credit, and seamless payouts via RazorpayX.',
+      icon: Search,
+      title: 'SEO & Organic Growth',
+      description: 'Rank higher on Google with technical SEO, content strategy, and on-page optimization that drives qualified traffic.',
       color: '#009933',
     },
     {
-      icon: Users,
-      title: 'Multi-Level Hierarchy',
-      description: 'Build your team with unlimited distributors and retailers. Earn from every transaction in your network.',
+      icon: Share2,
+      title: 'Social Media Marketing',
+      description: 'Build brand presence across Instagram, Facebook, LinkedIn, and YouTube with content, reels, and community management.',
       color: '#0052cc',
     },
     {
-      icon: TrendingUp,
-      title: 'Auto Commission Split',
-      description: 'Automated multi-level commission distribution. Earnings credited instantly to all stakeholders.',
+      icon: Target,
+      title: 'Paid Ads Management',
+      description: 'Maximize ROI with Google Ads, Meta Ads, and YouTube campaigns managed by certified performance marketers.',
       color: '#ff9933',
     },
     {
-      icon: Shield,
-      title: 'Secure & Compliant',
-      description: 'Bank-grade security with data encryption, KYC verification, and full regulatory compliance.',
+      icon: Cloud,
+      title: 'SaaS Development',
+      description: 'Custom CRM, ERP, HRMS, LMS, and industry-specific SaaS products built, deployed, and maintained for your business.',
       color: '#e91e63',
     },
     {
-      icon: Smartphone,
-      title: 'Mobile-First Design',
-      description: 'Fully responsive platform optimized for mobile. Access all services from anywhere, anytime.',
+      icon: Bot,
+      title: 'Automation & CRM',
+      description: 'WhatsApp bots, email workflows, sales funnels, and lead nurturing systems that convert prospects automatically.',
       color: '#00bcd4',
     },
     {
-      icon: Zap,
-      title: 'Lightning Fast',
-      description: 'Instant transaction processing with real-time status updates and immediate confirmations.',
+      icon: BarChart3,
+      title: 'Analytics & Reporting',
+      description: 'Real-time dashboards, conversion tracking, and monthly performance reports so you always know what is working.',
       color: '#ff9800',
     },
     {
-      icon: Globe,
-      title: 'Pan-India Coverage',
-      description: 'Services available across all states with regional language support and local payment methods.',
+      icon: Smartphone,
+      title: 'Mobile-First Solutions',
+      description: 'Responsive websites, progressive web apps, and mobile SaaS interfaces optimized for every device.',
       color: '#4caf50',
     },
     {
-      icon: Award,
-      title: 'Certificates & IDs',
-      description: 'Auto-generated certificates and ID cards for all retailers with QR code verification.',
+      icon: Zap,
+      title: 'Fast Deployment',
+      description: 'Launch marketing campaigns and SaaS products quickly with our proven templates and agile delivery process.',
       color: '#9c27b0',
     },
     {
-      icon: Clock,
-      title: '24/7 Operations',
-      description: 'Round-the-clock service availability with no downtime. Your business never sleeps.',
+      icon: Globe,
+      title: 'Pan-India Reach',
+      description: 'Scale your brand across India with localized campaigns, regional targeting, and multi-language support.',
       color: '#607d8b',
+    },
+    {
+      icon: PenTool,
+      title: 'Content & Branding',
+      description: 'Professional logos, brand kits, ad creatives, and copywriting that make your business stand out.',
+      color: '#3f51b5',
     },
     {
       icon: HeadphonesIcon,
       title: 'Dedicated Support',
-      description: 'WhatsApp, phone, and email support available 24/7. Expert team ready to assist you.',
-      color: '#3f51b5',
-    },
-    {
-      icon: BarChart3,
-      title: 'Advanced Analytics',
-      description: 'Comprehensive reports, transaction history, commission tracking, and performance insights.',
+      description: 'Account managers, strategy calls, and 24/7 WhatsApp support to keep your growth on track.',
       color: '#f44336',
     },
     {
-      icon: Lock,
-      title: 'KYC & Verification',
-      description: 'Secure KYC process with Aadhaar, PAN verification. Build trust with verified partners.',
+      icon: Layers,
+      title: 'White-Label Delivery',
+      description: 'Agencies and partners can resell our marketing and SaaS solutions under their own brand with full backend support.',
       color: '#ff5722',
     },
   ];
@@ -95,11 +95,11 @@ export default function Features() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Powerful Features for Your Success
+            Everything You Need to Grow Online
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Everything you need to run a successful digital business. Built with cutting-edge technology
-            and designed for maximum efficiency.
+            From lead generation to SaaS deployment — a complete digital marketing and software stack
+            built to scale your business.
           </p>
         </div>
 
@@ -130,40 +130,34 @@ export default function Features() {
             <div>
               <h3 className="text-3xl font-bold mb-4">Ready to Transform Your Business?</h3>
               <p className="text-lg text-brand-foreground/85 mb-6">
-                Join 11,000+ successful partners who are earning daily income through our platform.
-                Start your digital franchise journey today!
+                Join 500+ businesses that trust us for digital marketing campaigns, SaaS products,
+                and automation solutions that deliver real results.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
-                  onClick={() => (window.location.hash = '#signup')}
+                  onClick={() => (window.location.hash = '#contact-page')}
                   className="px-8 py-3 bg-white text-brand font-bold rounded-lg hover:bg-gray-100 transition-colors"
                 >
                   Get Started Now
-                </button>
-                <button
-                  onClick={() => (window.location.hash = '#partner')}
-                  className="px-8 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors"
-                >
-                  View Pricing
                 </button>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
-                <p className="text-4xl font-bold mb-2">114+</p>
-                <p className="text-sm opacity-90">Total Services</p>
+                <p className="text-4xl font-bold mb-2">50+</p>
+                <p className="text-sm opacity-90">SaaS Products</p>
               </div>
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
-                <p className="text-4xl font-bold mb-2">9</p>
-                <p className="text-sm opacity-90">Categories</p>
+                <p className="text-4xl font-bold mb-2">8</p>
+                <p className="text-sm opacity-90">Service Categories</p>
               </div>
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
-                <p className="text-4xl font-bold mb-2">100%</p>
-                <p className="text-sm opacity-90">Uptime</p>
+                <p className="text-4xl font-bold mb-2">3x</p>
+                <p className="text-sm opacity-90">Avg. Lead Growth</p>
               </div>
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
-                <p className="text-4xl font-bold mb-2">Instant</p>
-                <p className="text-sm opacity-90">Payouts</p>
+                <p className="text-4xl font-bold mb-2">24/7</p>
+                <p className="text-sm opacity-90">Support</p>
               </div>
             </div>
           </div>

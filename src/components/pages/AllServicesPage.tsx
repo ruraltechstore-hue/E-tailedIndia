@@ -4,8 +4,7 @@ import {
   Share2,
   Bot,
   Store,
-  Package,
-  GraduationCap,
+  Megaphone,
   Paintbrush,
   Cloud,
   ArrowRight,
@@ -17,8 +16,8 @@ export default function AllServicesPage() {
   const categories = [
     {
       id: 1,
-      title: 'Digital Business Services',
-      description: 'Websites, logos, business cards, hosting & branding kits.',
+      title: 'Web & Branding',
+      description: 'Websites, logos, business cards, hosting & brand identity kits.',
       icon: Briefcase,
       color: '#0052cc',
       href: '#digital-business',
@@ -62,24 +61,15 @@ export default function AllServicesPage() {
     },
     {
       id: 6,
-      title: 'GPL Marketplace',
-      description: '2000+ GPL themes, 5000+ plugins & app source code.',
-      icon: Package,
-      color: '#00bcd4',
-      href: '#gpl-marketplace',
-      services: ['GPL Themes', 'GPL Plugins', 'SaaS Scripts', 'App Source Code'],
+      title: 'Digital Marketing & SaaS',
+      description: 'SEO, paid ads, social media, lead funnels, CRM & SaaS deployment.',
+      icon: Megaphone,
+      color: '#ff5722',
+      href: '#digital-marketing',
+      services: ['SEO', 'Google Ads', 'Social Media', 'CRM Setup', 'SaaS Deployment'],
     },
     {
       id: 7,
-      title: 'Internships & Courses',
-      description: 'Live + recorded programs with certificates and job support.',
-      icon: GraduationCap,
-      color: '#ff5722',
-      href: '#education-internship',
-      services: ['Digital Marketing', 'E-Commerce', 'Python', 'Web Development'],
-    },
-    {
-      id: 8,
       title: 'Branding & Printing',
       description: 'Logos, visiting cards, posters, brochures & promotional materials.',
       icon: Paintbrush,
@@ -88,7 +78,7 @@ export default function AllServicesPage() {
       services: ['Logo Design', 'Visiting Cards', 'Posters', 'Brochures'],
     },
     {
-      id: 9,
+      id: 8,
       title: 'SaaS Software Suite',
       description: 'CRM, ERP, HRMS, LMS, ticketing & mobile app builder.',
       icon: Cloud,
@@ -103,10 +93,10 @@ export default function AllServicesPage() {
       <div className="bg-brand text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl lg:text-6xl font-bold mb-6">
-            Explore All Services by E-Tailed Digital India
+            Digital Marketing & SaaS Services
           </h1>
           <p className="text-xl lg:text-2xl text-brand-foreground/85 max-w-4xl mx-auto leading-relaxed">
-            We offer more than <strong>150+ digital services</strong> across 9 major categories
+            End-to-end solutions across <strong>8 service categories</strong> — from SEO and paid ads to custom SaaS development
           </p>
         </div>
       </div>
@@ -163,20 +153,13 @@ export default function AllServicesPage() {
 
       <section className="py-20 bg-brand-muted">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Start Reselling?</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Get Started?</h2>
           <p className="text-xl text-gray-600 mb-8">
-            Join E-Tailed Digital India and start earning with 150+ digital services
+            Tell us about your marketing or SaaS needs and we will craft a solution tailored to your business
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              onClick={() => window.location.hash = '#signup'}
-            >
-              Become a Reseller
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
               onClick={() => window.location.hash = '#contact-page'}
             >
               Contact Us

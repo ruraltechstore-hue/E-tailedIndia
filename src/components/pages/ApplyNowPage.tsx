@@ -34,7 +34,7 @@ export default function ApplyNowPage() {
       type: 'Retailer',
       price: '10000',
       icon: Building2,
-      benefits: ['Access to 150+ Services', 'White-Label Dashboard', 'Basic Training', 'Email Support'],
+      benefits: ['Marketing & SaaS Catalog', 'Partner Dashboard', 'Basic Training', 'Email Support'],
     },
     {
       type: 'Distributor',
@@ -203,7 +203,7 @@ export default function ApplyNowPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl lg:text-6xl font-bold mb-6">Apply Now</h1>
           <p className="text-xl lg:text-2xl text-brand-foreground/85 max-w-4xl mx-auto leading-relaxed">
-            Join E-Tailed Digital India as a partner and start your digital business journey
+            Join E-Tailed Digital India as an agency partner and offer digital marketing & SaaS solutions
           </p>
         </div>
       </div>
@@ -533,13 +533,13 @@ export default function ApplyNowPage() {
           <div className="mt-12 grid md:grid-cols-3 gap-6">
             <div className="bg-brand-muted rounded-xl p-6">
               <CheckCircle2 className="w-10 h-10 text-brand mb-3" />
-              <h3 className="font-bold text-lg text-gray-900 mb-2">White-Label Services</h3>
-              <p className="text-gray-600">Resell all services under your own brand name</p>
+              <h3 className="font-bold text-lg text-gray-900 mb-2">White-Label Delivery</h3>
+              <p className="text-gray-600">Offer marketing and SaaS services under your own brand</p>
             </div>
             <div className="bg-accent-muted rounded-xl p-6">
               <CheckCircle2 className="w-10 h-10 text-accent mb-3" />
-              <h3 className="font-bold text-lg text-gray-900 mb-2">150+ Services</h3>
-              <p className="text-gray-600">Access to all digital services and products</p>
+              <h3 className="font-bold text-lg text-gray-900 mb-2">Full Service Portfolio</h3>
+              <p className="text-gray-600">Digital marketing, SaaS, web, and automation solutions</p>
             </div>
             <div className="bg-warning-muted rounded-xl p-6">
               <CheckCircle2 className="w-10 h-10 text-warning-foreground mb-3" />

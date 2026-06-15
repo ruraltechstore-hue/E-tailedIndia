@@ -123,13 +123,6 @@ export default function SaaSSoftwarePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-white text-vertical-saas hover:bg-gray-100"
-              onClick={() => window.location.hash = '#signup'}
-            >
-              Get Started
-            </Button>
-            <Button
-              size="lg"
               variant="outline"
               className="border-2 border-white text-white hover:bg-white/10"
               onClick={() => window.location.hash = '#contact-page'}

@@ -4,20 +4,17 @@ import {
   Share2,
   Bot,
   Store,
-  Package,
-  GraduationCap,
-  Building2,
+  Megaphone,
   Paintbrush,
   Cloud,
-  Users,
 } from 'lucide-react';
 import Card, { CardBody } from '../ui/Card';
 
 const categories = [
   {
     id: 1,
-    name: 'Digital Business Services',
-    description: 'Websites, logos, business cards, hosting & branding kits',
+    name: 'Web & Branding',
+    description: 'Websites, logos, business cards, hosting & brand identity kits',
     icon: Briefcase,
     color: '#0052cc',
     href: '#digital-business',
@@ -56,22 +53,14 @@ const categories = [
   },
   {
     id: 6,
-    name: 'GPL Marketplace',
-    description: '2000+ GPL themes, 5000+ plugins & app source code',
-    icon: Package,
-    color: '#00bcd4',
-    href: '#gpl-marketplace',
+    name: 'Digital Marketing & SaaS',
+    description: 'SEO, paid ads, social media campaigns, CRM setup & SaaS deployment',
+    icon: Megaphone,
+    color: '#ff5722',
+    href: '#digital-marketing',
   },
   {
     id: 7,
-    name: 'Internships & Courses',
-    description: 'Live + recorded programs with certificates and job support',
-    icon: GraduationCap,
-    color: '#ff5722',
-    href: '#education-internship',
-  },
-  {
-    id: 8,
     name: 'Branding & Printing',
     description: 'Logos, visiting cards, posters, brochures & promotional materials',
     icon: Paintbrush,
@@ -79,7 +68,7 @@ const categories = [
     href: '#branding-printing',
   },
   {
-    id: 9,
+    id: 8,
     name: 'SaaS Software Suite',
     description: 'CRM, ERP, HRMS, LMS, ticketing & mobile app builder',
     icon: Cloud,
@@ -95,10 +84,11 @@ export default function ServicesPreview() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Our Top Categories
+            Digital Marketing & SaaS Services
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Access 150+ digital services across 9 major categories. From business essentials to education programs, everything you need to start your digital business.
+            Comprehensive solutions across 8 categories — from SEO and paid ads to custom SaaS
+            development and automation.
           </p>
         </div>
 

@@ -120,8 +120,12 @@ export default function RefundPolicy() {
                 <Phone className="w-5 h-5 text-accent" />
                 <div>
                   <p className="text-sm text-gray-600">Phone</p>
-                  <a href="tel:+918125752562" className="text-accent hover:text-success-foreground font-semibold">
-                    +91 8125752562
+                  <a href="tel:+919392898733" className="text-accent hover:text-success-foreground font-semibold">
+                    +91 93928 98733
+                  </a>
+                  {' / '}
+                  <a href="tel:+919390168733" className="text-accent hover:text-success-foreground font-semibold">
+                    +91 9390168733
                   </a>
                 </div>
               </div>
