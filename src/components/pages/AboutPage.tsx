@@ -1,8 +1,12 @@
+import { useNavigate } from 'react-router-dom';
+import SEO from '../seo/SEO';
 import { Target, Eye, Award, BookOpen, ShoppingCart, TrendingUp, Users, Briefcase } from 'lucide-react';
 import Card, { CardBody } from '../ui/Card';
 import Button from '../ui/Button';
 
 export default function AboutPage() {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-white">
       <div className="bg-brand text-white py-20">
@@ -186,7 +190,7 @@ export default function AboutPage() {
               <Button
                 size="lg"
                 className="bg-white text-brand hover:bg-gray-100"
-                onClick={() => window.location.hash = '#contact-page'}
+                onClick={() => navigate('/contact')}
               >
                 Contact Us
               </Button>

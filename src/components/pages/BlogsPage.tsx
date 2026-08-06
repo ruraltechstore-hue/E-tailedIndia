@@ -1,3 +1,4 @@
+import SEO from '../seo/SEO';
 import { Calendar, User, ArrowRight, Tag } from 'lucide-react';
 import Card, { CardBody } from '../ui/Card';
 import Button from '../ui/Button';
@@ -512,7 +513,10 @@ Don't wait—start automating your business today and gain a competitive edge!`,
                   <img
                     src={blog.image}
                     alt={blog.title}
-                    className="w-full h-48 object-cover"
+                    loading="lazy"
+                    width="400"
+                    height="250"
+                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="p-6">
                     <div className="flex items-center space-x-4 text-sm text-gray-500 mb-3">

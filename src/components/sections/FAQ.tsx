@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
@@ -7,6 +8,8 @@ import Card, { CardBody } from '../ui/Card';
 
 
 export default function FAQ() {
+  const navigate = useNavigate();
+
 
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -246,7 +249,7 @@ export default function FAQ() {
 
             <button
 
-              onClick={() => (window.location.hash = '#contact-page')}
+              onClick={() => (navigate('/contact'))}
 
               className="px-6 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors"
 

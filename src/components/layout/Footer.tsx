@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -74,22 +75,22 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#home" className="text-gray-400 hover:text-white transition-colors">Home</a></li>
-              <li><a href="#about-page" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#services-page" className="text-gray-400 hover:text-white transition-colors">Services</a></li>
-              <li><a href="#contact-page" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+              <li><Link to="/" className="text-gray-400 hover:text-white transition-colors">Home</Link></li>
+              <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
+              <li><Link to="/services" className="text-gray-400 hover:text-white transition-colors">Services</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold text-lg mb-4">Services</h4>
             <ul className="space-y-2">
-              <li><a href="#digital-business" className="text-gray-400 hover:text-white transition-colors">Web & Branding</a></li>
-              <li><a href="#website-ecommerce" className="text-gray-400 hover:text-white transition-colors">Website & E-Commerce</a></li>
-              <li><a href="#social-media" className="text-gray-400 hover:text-white transition-colors">Social Media Services</a></li>
-              <li><a href="#automations-crm" className="text-gray-400 hover:text-white transition-colors">Automations & CRM</a></li>
-              <li><a href="#digital-marketing" className="text-gray-400 hover:text-white transition-colors">Digital Marketing & SaaS</a></li>
-              <li><a href="#blogs-page" className="text-gray-400 hover:text-white transition-colors">Blog & Resources</a></li>
+              <li><Link to="/services/digital-business" className="text-gray-400 hover:text-white transition-colors">Web & Branding</Link></li>
+              <li><Link to="/services/website-ecommerce" className="text-gray-400 hover:text-white transition-colors">Website & E-Commerce</Link></li>
+              <li><Link to="/services/social-media" className="text-gray-400 hover:text-white transition-colors">Social Media Services</Link></li>
+              <li><Link to="/services/automations-crm" className="text-gray-400 hover:text-white transition-colors">Automations & CRM</Link></li>
+              <li><Link to="/services/digital-marketing" className="text-gray-400 hover:text-white transition-colors">Digital Marketing & SaaS</Link></li>
+              <li><Link to="/blogs" className="text-gray-400 hover:text-white transition-colors">Blog & Resources</Link></li>
             </ul>
           </div>
 
@@ -124,12 +125,12 @@ export default function Footer() {
               {currentYear} Etailed Digital Services Pvt. Ltd. All rights reserved.
             </p>
             <div className="flex flex-wrap gap-x-6 gap-y-2 justify-center">
-              <a href="#privacy" className="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#terms" className="text-sm text-gray-400 hover:text-white transition-colors">Terms & Conditions</a>
-              <a href="#refund" className="text-sm text-gray-400 hover:text-white transition-colors">Refund Policy</a>
-              <a href="#shipping" className="text-sm text-gray-400 hover:text-white transition-colors">Shipping Policy</a>
-              <a href="#disclaimer" className="text-sm text-gray-400 hover:text-white transition-colors">Disclaimer</a>
-              <a href="#cookie" className="text-sm text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
+              <Link to="/privacy-policy" className="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/terms-conditions" className="text-sm text-gray-400 hover:text-white transition-colors">Terms & Conditions</Link>
+              <Link to="/refund-policy" className="text-sm text-gray-400 hover:text-white transition-colors">Refund Policy</Link>
+              <Link to="/shipping-policy" className="text-sm text-gray-400 hover:text-white transition-colors">Shipping Policy</Link>
+              <Link to="/disclaimer" className="text-sm text-gray-400 hover:text-white transition-colors">Disclaimer</Link>
+              <Link to="/cookie-policy" className="text-sm text-gray-400 hover:text-white transition-colors">Cookie Policy</Link>
             </div>
           </div>
         </div>

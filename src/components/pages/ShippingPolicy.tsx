@@ -1,3 +1,4 @@
+import SEO from '../seo/SEO';
 import { Truck, Clock, Package, CheckCircle2 } from 'lucide-react';
 import Card, { CardBody } from '../ui/Card';
 

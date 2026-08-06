@@ -1,7 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Sparkles, TrendingUp, Users } from 'lucide-react';
 import Button from '../ui/Button';
 
 export default function Hero() {
+  const navigate = useNavigate();
+
   return (
     <section id="home" className="pt-32 pb-20 bg-brand-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,11 +28,11 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="group" onClick={() => window.location.hash = '#contact-page'}>
+              <Button size="lg" className="group" onClick={() => navigate('/contact')}>
                 Get a Free Consultation
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button size="lg" variant="outline" onClick={() => window.location.hash = '#services-page'}>
+              <Button size="lg" variant="outline" onClick={() => navigate('/services')}>
                 Explore Our Services
               </Button>
             </div>

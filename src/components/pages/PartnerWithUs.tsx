@@ -1,8 +1,12 @@
+import { useNavigate } from 'react-router-dom';
+import SEO from '../seo/SEO';
 import { Check, Users, Building2, Globe, Rocket, Truck, Code, Crown } from 'lucide-react';
 import Card, { CardBody, CardHeader } from '../ui/Card';
 import Button from '../ui/Button';
 
 export default function PartnerWithUs() {
+  const navigate = useNavigate();
+
   const packages = [
     {
       name: 'Retailer',
@@ -249,7 +253,7 @@ export default function PartnerWithUs() {
               size="lg"
               variant="outline"
               className="border-2 border-white text-white hover:bg-white/10"
-              onClick={() => (window.location.hash = '#contact')}
+              onClick={() => (navigate('/contact'))}
             >
               Schedule a Call
             </Button>

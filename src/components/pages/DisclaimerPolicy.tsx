@@ -1,3 +1,4 @@
+import SEO from '../seo/SEO';
 import { AlertTriangle, ExternalLink, Shield, Info } from 'lucide-react';
 import Card, { CardBody } from '../ui/Card';
 

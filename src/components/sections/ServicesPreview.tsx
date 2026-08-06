@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import {
   Briefcase,
   Globe,
@@ -78,6 +79,8 @@ const categories = [
 ];
 
 export default function ServicesPreview() {
+  const navigate = useNavigate();
+
 
   return (
     <section id="services" className="py-20 bg-white">
@@ -97,7 +100,7 @@ export default function ServicesPreview() {
             const Icon = category.icon;
             return (
               <Card key={category.id} hover>
-                <CardBody className="flex items-start space-x-4 p-6 cursor-pointer" onClick={() => window.location.hash = category.href}>
+                <CardBody className="flex items-start space-x-4 p-6 cursor-pointer" onClick={() => navigate((category.href || '').replace('#', '/').replace('-page', ''))}>
                   <div
                     className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
                     style={{ backgroundColor: `${category.color}20` }}
@@ -120,7 +123,7 @@ export default function ServicesPreview() {
 
         <div className="mt-12 text-center">
           <button
-            onClick={() => window.location.hash = '#services-page'}
+            onClick={() => navigate('/services')}
             className="text-brand hover:text-brand-hover font-semibold text-lg hover:underline"
           >
             View All Services →

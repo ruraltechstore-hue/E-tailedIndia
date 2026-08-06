@@ -1,3 +1,4 @@
+import SEO from '../seo/SEO';
 import { FileText, AlertTriangle, CheckCircle, XCircle } from 'lucide-react';
 import Card, { CardBody } from '../ui/Card';
 

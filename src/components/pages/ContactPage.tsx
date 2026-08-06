@@ -1,3 +1,4 @@
+import SEO from '../seo/SEO';
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send, MessageCircle } from 'lucide-react';
 import WhatsAppLogo from '../icons/WhatsAppLogo';

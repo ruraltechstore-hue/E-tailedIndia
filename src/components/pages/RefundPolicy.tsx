@@ -1,3 +1,4 @@
+import SEO from '../seo/SEO';
 import { RotateCcw, AlertCircle, XCircle, Mail, Phone } from 'lucide-react';
 import Card, { CardBody } from '../ui/Card';
 

@@ -1,9 +1,13 @@
+import { useNavigate } from 'react-router-dom';
+import SEO from '../seo/SEO';
 import { Megaphone, Target, BarChart3, CheckCircle2 } from 'lucide-react';
 import Card, { CardBody } from '../ui/Card';
 import Button from '../ui/Button';
 import ServiceContactForm from '../ui/ServiceContactForm';
 
 export default function DigitalMarketingPage() {
+  const navigate = useNavigate();
+
   const services = [
     'SEO & organic growth strategy',
     'Google Ads & search campaigns',
@@ -121,7 +125,7 @@ export default function DigitalMarketingPage() {
           <Button
             size="lg"
             className="bg-white text-brand hover:bg-gray-100"
-            onClick={() => window.location.hash = '#contact-page'}
+            onClick={() => navigate('/contact')}
           >
             Contact Us
           </Button>

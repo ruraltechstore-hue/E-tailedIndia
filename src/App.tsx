@@ -1,383 +1,90 @@
-import { useState, useEffect } from 'react';
+import React, { Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
-import HomePage from './components/pages/HomePage';
-import AboutPage from './components/pages/AboutPage';
-import AllServicesPage from './components/pages/AllServicesPage';
-import DigitalBusinessServicesPage from './components/pages/DigitalBusinessServicesPage';
-import WebsiteECommercePage from './components/pages/WebsiteECommercePage';
-import SocialMediaServicesPage from './components/pages/SocialMediaServicesPage';
-import AutomationsCRMPage from './components/pages/AutomationsCRMPage';
-import BusinessSystemsPage from './components/pages/BusinessSystemsPage';
-import DigitalMarketingPage from './components/pages/DigitalMarketingPage';
-import BrandingPrintingPage from './components/pages/BrandingPrintingPage';
-import SaaSSoftwarePage from './components/pages/SaaSSoftwarePage';
-import BlogsPage from './components/pages/BlogsPage';
-import PartnerWithUsPage from './components/pages/PartnerWithUsPage';
-import ApplyNowPage from './components/pages/ApplyNowPage';
-import ContactPage from './components/pages/ContactPage';
-import FAQPage from './components/pages/FAQPage';
-import PrivacyPolicy from './components/pages/PrivacyPolicy';
-import TermsAndConditions from './components/pages/TermsAndConditions';
-import RefundPolicy from './components/pages/RefundPolicy';
-import ShippingPolicy from './components/pages/ShippingPolicy';
-import DisclaimerPolicy from './components/pages/DisclaimerPolicy';
-import CookiePolicy from './components/pages/CookiePolicy';
 import WhatsAppButton from './components/ui/WhatsAppButton';
 import AIChatbot from './components/ui/AIChatbot';
 
-type ViewType = 'home' | 'privacy' | 'terms' | 'refund' | 'shipping' | 'disclaimer' | 'cookie' | 'about' | 'services' | 'digital-business' | 'website-ecommerce' | 'social-media' | 'automations-crm' | 'business-systems' | 'digital-marketing' | 'branding-printing' | 'saas-software' | 'blogs' | 'partner' | 'apply' | 'contact' | 'faq';
+// Lazy loading all pages for optimal performance (Code Splitting)
+const HomePage = React.lazy(() => import('./components/pages/HomePage'));
+const AboutPage = React.lazy(() => import('./components/pages/AboutPage'));
+const AllServicesPage = React.lazy(() => import('./components/pages/AllServicesPage'));
+const DigitalBusinessServicesPage = React.lazy(() => import('./components/pages/DigitalBusinessServicesPage'));
+const WebsiteECommercePage = React.lazy(() => import('./components/pages/WebsiteECommercePage'));
+const SocialMediaServicesPage = React.lazy(() => import('./components/pages/SocialMediaServicesPage'));
+const AutomationsCRMPage = React.lazy(() => import('./components/pages/AutomationsCRMPage'));
+const BusinessSystemsPage = React.lazy(() => import('./components/pages/BusinessSystemsPage'));
+const DigitalMarketingPage = React.lazy(() => import('./components/pages/DigitalMarketingPage'));
+const BrandingPrintingPage = React.lazy(() => import('./components/pages/BrandingPrintingPage'));
+const SaaSSoftwarePage = React.lazy(() => import('./components/pages/SaaSSoftwarePage'));
+const BlogsPage = React.lazy(() => import('./components/pages/BlogsPage'));
+const PartnerWithUsPage = React.lazy(() => import('./components/pages/PartnerWithUsPage'));
+const ApplyNowPage = React.lazy(() => import('./components/pages/ApplyNowPage'));
+const ContactPage = React.lazy(() => import('./components/pages/ContactPage'));
+const FAQPage = React.lazy(() => import('./components/pages/FAQPage'));
+const PrivacyPolicy = React.lazy(() => import('./components/pages/PrivacyPolicy'));
+const TermsAndConditions = React.lazy(() => import('./components/pages/TermsAndConditions'));
+const RefundPolicy = React.lazy(() => import('./components/pages/RefundPolicy'));
+const ShippingPolicy = React.lazy(() => import('./components/pages/ShippingPolicy'));
+const DisclaimerPolicy = React.lazy(() => import('./components/pages/DisclaimerPolicy'));
+const CookiePolicy = React.lazy(() => import('./components/pages/CookiePolicy'));
+
+// Loading Fallback Component
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-white">
+    <div className="w-10 h-10 border-4 border-brand border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
 
 function App() {
-  const [currentView, setCurrentView] = useState<ViewType>('home');
-
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.slice(1);
-      if (hash === 'privacy') {
-        setCurrentView('privacy');
-      } else if (hash === 'terms') {
-        setCurrentView('terms');
-      } else if (hash === 'refund') {
-        setCurrentView('refund');
-      } else if (hash === 'shipping') {
-        setCurrentView('shipping');
-      } else if (hash === 'disclaimer') {
-        setCurrentView('disclaimer');
-      } else if (hash === 'cookie') {
-        setCurrentView('cookie');
-      } else if (hash === 'faq') {
-        setCurrentView('faq');
-      } else if (hash === 'about-page') {
-        setCurrentView('about');
-      } else if (hash === 'services-page') {
-        setCurrentView('services');
-      } else if (hash === 'digital-business') {
-        setCurrentView('digital-business');
-      } else if (hash === 'website-ecommerce') {
-        setCurrentView('website-ecommerce');
-      } else if (hash === 'social-media') {
-        setCurrentView('social-media');
-      } else if (hash === 'automations-crm') {
-        setCurrentView('automations-crm');
-      } else if (hash === 'business-systems') {
-        setCurrentView('business-systems');
-      } else if (hash === 'digital-marketing' || hash === 'education-internship') {
-        setCurrentView('digital-marketing');
-      } else if (hash === 'branding-printing') {
-        setCurrentView('branding-printing');
-      } else if (hash === 'saas-software') {
-        setCurrentView('saas-software');
-      } else if (hash === 'blogs-page') {
-        setCurrentView('blogs');
-      } else if (hash === 'partner-page') {
-        setCurrentView('partner');
-      } else if (hash === 'apply-page') {
-        setCurrentView('apply');
-      } else if (hash === 'contact-page') {
-        setCurrentView('contact');
-      } else if (hash === 'home' || hash === '') {
-        setCurrentView('home');
-      }
-    };
-
-    handleHashChange();
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
-
-  if (currentView === 'privacy') {
-    return (
-      <div className="min-h-screen bg-white">
-        <Header />
-        <PrivacyPolicy />
-        <Footer />
-        <WhatsAppButton />
-        <AIChatbot />
-      </div>
-    );
-  }
-
-  if (currentView === 'terms') {
-    return (
-      <div className="min-h-screen bg-white">
-        <Header />
-        <TermsAndConditions />
-        <Footer />
-        <WhatsAppButton />
-        <AIChatbot />
-      </div>
-    );
-  }
-
-  if (currentView === 'refund') {
-    return (
-      <div className="min-h-screen bg-white">
-        <Header />
-        <RefundPolicy />
-        <Footer />
-        <WhatsAppButton />
-        <AIChatbot />
-      </div>
-    );
-  }
-
-  if (currentView === 'shipping') {
-    return (
-      <div className="min-h-screen bg-white">
-        <Header />
-        <ShippingPolicy />
-        <Footer />
-        <WhatsAppButton />
-        <AIChatbot />
-      </div>
-    );
-  }
-
-  if (currentView === 'disclaimer') {
-    return (
-      <div className="min-h-screen bg-white">
-        <Header />
-        <DisclaimerPolicy />
-        <Footer />
-        <WhatsAppButton />
-        <AIChatbot />
-      </div>
-    );
-  }
-
-  if (currentView === 'cookie') {
-    return (
-      <div className="min-h-screen bg-white">
-        <Header />
-        <CookiePolicy />
-        <Footer />
-        <WhatsAppButton />
-        <AIChatbot />
-      </div>
-    );
-  }
-
-  if (currentView === 'faq') {
-    return (
-      <div className="min-h-screen bg-white">
-        <Header />
-        <div className="pt-20">
-          <FAQPage />
-        </div>
-        <Footer />
-        <WhatsAppButton />
-        <AIChatbot />
-      </div>
-    );
-  }
-
-  if (currentView === 'about') {
-    return (
-      <div className="min-h-screen bg-white">
-        <Header />
-        <div className="pt-20">
-          <AboutPage />
-        </div>
-        <Footer />
-        <WhatsAppButton />
-        <AIChatbot />
-      </div>
-    );
-  }
-
-  if (currentView === 'services') {
-    return (
-      <div className="min-h-screen bg-white">
-        <Header />
-        <div className="pt-20">
-          <AllServicesPage />
-        </div>
-        <Footer />
-        <WhatsAppButton />
-        <AIChatbot />
-      </div>
-    );
-  }
-
-  if (currentView === 'digital-business') {
-    return (
-      <div className="min-h-screen bg-white">
-        <Header />
-        <div className="pt-20">
-          <DigitalBusinessServicesPage />
-        </div>
-        <Footer />
-        <WhatsAppButton />
-        <AIChatbot />
-      </div>
-    );
-  }
-
-  if (currentView === 'website-ecommerce') {
-    return (
-      <div className="min-h-screen bg-white">
-        <Header />
-        <div className="pt-20">
-          <WebsiteECommercePage />
-        </div>
-        <Footer />
-        <WhatsAppButton />
-        <AIChatbot />
-      </div>
-    );
-  }
-
-  if (currentView === 'social-media') {
-    return (
-      <div className="min-h-screen bg-white">
-        <Header />
-        <div className="pt-20">
-          <SocialMediaServicesPage />
-        </div>
-        <Footer />
-        <WhatsAppButton />
-        <AIChatbot />
-      </div>
-    );
-  }
-
-  if (currentView === 'automations-crm') {
-    return (
-      <div className="min-h-screen bg-white">
-        <Header />
-        <div className="pt-20">
-          <AutomationsCRMPage />
-        </div>
-        <Footer />
-        <WhatsAppButton />
-        <AIChatbot />
-      </div>
-    );
-  }
-
-  if (currentView === 'business-systems') {
-    return (
-      <div className="min-h-screen bg-white">
-        <Header />
-        <div className="pt-20">
-          <BusinessSystemsPage />
-        </div>
-        <Footer />
-        <WhatsAppButton />
-        <AIChatbot />
-      </div>
-    );
-  }
-
-  if (currentView === 'digital-marketing') {
-    return (
-      <div className="min-h-screen bg-white">
-        <Header />
-        <div className="pt-20">
-          <DigitalMarketingPage />
-        </div>
-        <Footer />
-        <WhatsAppButton />
-        <AIChatbot />
-      </div>
-    );
-  }
-
-  if (currentView === 'branding-printing') {
-    return (
-      <div className="min-h-screen bg-white">
-        <Header />
-        <div className="pt-20">
-          <BrandingPrintingPage />
-        </div>
-        <Footer />
-        <WhatsAppButton />
-        <AIChatbot />
-      </div>
-    );
-  }
-
-  if (currentView === 'saas-software') {
-    return (
-      <div className="min-h-screen bg-white">
-        <Header />
-        <div className="pt-20">
-          <SaaSSoftwarePage />
-        </div>
-        <Footer />
-        <WhatsAppButton />
-        <AIChatbot />
-      </div>
-    );
-  }
-
-  if (currentView === 'blogs') {
-    return (
-      <div className="min-h-screen bg-white">
-        <Header />
-        <div className="pt-20">
-          <BlogsPage />
-        </div>
-        <Footer />
-        <WhatsAppButton />
-        <AIChatbot />
-      </div>
-    );
-  }
-
-  if (currentView === 'partner') {
-    return (
-      <div className="min-h-screen bg-white">
-        <Header />
-        <div className="pt-20">
-          <PartnerWithUsPage />
-        </div>
-        <Footer />
-        <WhatsAppButton />
-        <AIChatbot />
-      </div>
-    );
-  }
-
-  if (currentView === 'apply') {
-    return (
-      <div className="min-h-screen bg-white">
-        <Header />
-        <div className="pt-20">
-          <ApplyNowPage />
-        </div>
-        <Footer />
-        <WhatsAppButton />
-        <AIChatbot />
-      </div>
-    );
-  }
-
-  if (currentView === 'contact') {
-    return (
-      <div className="min-h-screen bg-white">
-        <Header />
-        <div className="pt-20">
-          <ContactPage />
-        </div>
-        <Footer />
-        <WhatsAppButton />
-        <AIChatbot />
-      </div>
-    );
-  }
-
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <main>
-        <HomePage />
-      </main>
-      <Footer />
-      <WhatsAppButton />
-      <AIChatbot />
-    </div>
+    <Router>
+      <div className="min-h-screen bg-white flex flex-col">
+        <Header />
+        
+        <main className="flex-grow">
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<div className="pt-20"><AboutPage /></div>} />
+              
+              {/* Services Routes */}
+              <Route path="/services" element={<div className="pt-20"><AllServicesPage /></div>} />
+              <Route path="/services/digital-business" element={<div className="pt-20"><DigitalBusinessServicesPage /></div>} />
+              <Route path="/services/website-ecommerce" element={<div className="pt-20"><WebsiteECommercePage /></div>} />
+              <Route path="/services/social-media" element={<div className="pt-20"><SocialMediaServicesPage /></div>} />
+              <Route path="/services/automations-crm" element={<div className="pt-20"><AutomationsCRMPage /></div>} />
+              <Route path="/services/business-systems" element={<div className="pt-20"><BusinessSystemsPage /></div>} />
+              <Route path="/services/digital-marketing" element={<div className="pt-20"><DigitalMarketingPage /></div>} />
+              <Route path="/services/branding-printing" element={<div className="pt-20"><BrandingPrintingPage /></div>} />
+              <Route path="/services/saas-software" element={<div className="pt-20"><SaaSSoftwarePage /></div>} />
+              
+              {/* Other Pages */}
+              <Route path="/blogs" element={<div className="pt-20"><BlogsPage /></div>} />
+              <Route path="/partner" element={<div className="pt-20"><PartnerWithUsPage /></div>} />
+              <Route path="/apply" element={<div className="pt-20"><ApplyNowPage /></div>} />
+              <Route path="/contact" element={<div className="pt-20"><ContactPage /></div>} />
+              <Route path="/faq" element={<div className="pt-20"><FAQPage /></div>} />
+              
+              {/* Policies */}
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-conditions" element={<TermsAndConditions />} />
+              <Route path="/refund-policy" element={<RefundPolicy />} />
+              <Route path="/shipping-policy" element={<ShippingPolicy />} />
+              <Route path="/disclaimer" element={<DisclaimerPolicy />} />
+              <Route path="/cookie-policy" element={<CookiePolicy />} />
+              
+              {/* Fallback for unknown routes */}
+              <Route path="*" element={<HomePage />} />
+            </Routes>
+          </Suspense>
+        </main>
+        
+        <Footer />
+        <WhatsAppButton />
+        <AIChatbot />
+      </div>
+    </Router>
   );
 }
 

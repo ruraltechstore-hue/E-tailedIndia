@@ -1,3 +1,4 @@
+import SEO from '../seo/SEO';
 import { Cookie, Settings, Eye, Shield } from 'lucide-react';
 import Card, { CardBody } from '../ui/Card';
 

@@ -1,9 +1,13 @@
+import { useNavigate } from 'react-router-dom';
+import SEO from '../seo/SEO';
 import { Globe, ShoppingBag, Layout, CheckCircle2 } from 'lucide-react';
 import Card, { CardBody } from '../ui/Card';
 import Button from '../ui/Button';
 import ServiceContactForm from '../ui/ServiceContactForm';
 
 export default function WebsiteECommercePage() {
+  const navigate = useNavigate();
+
   const solutions = [
     'Static websites',
     'Dynamic websites',
@@ -123,7 +127,7 @@ export default function WebsiteECommercePage() {
               size="lg"
               variant="outline"
               className="border-2 border-white text-white hover:bg-white/10"
-              onClick={() => window.location.hash = '#contact-page'}
+              onClick={() => navigate('/contact')}
             >
               Request Quote
             </Button>

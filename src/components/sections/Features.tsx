@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import {
   Search,
   Share2,
@@ -15,6 +16,8 @@ import {
 import Card, { CardBody } from '../ui/Card';
 
 export default function Features() {
+  const navigate = useNavigate();
+
   const features = [
     {
       icon: Search,
@@ -135,7 +138,7 @@ export default function Features() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
-                  onClick={() => (window.location.hash = '#contact-page')}
+                  onClick={() => (navigate('/contact'))}
                   className="px-8 py-3 bg-white text-brand font-bold rounded-lg hover:bg-gray-100 transition-colors"
                 >
                   Get Started Now

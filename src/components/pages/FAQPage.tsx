@@ -1,3 +1,4 @@
+import SEO from '../seo/SEO';
 import { HelpCircle, CheckCircle2 } from 'lucide-react';
 
 import Card, { CardBody } from '../ui/Card';

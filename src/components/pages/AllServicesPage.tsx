@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+import SEO from '../seo/SEO';
 import {
   Briefcase,
   Globe,
@@ -13,6 +15,8 @@ import Card, { CardBody } from '../ui/Card';
 import Button from '../ui/Button';
 
 export default function AllServicesPage() {
+  const navigate = useNavigate();
+
   const categories = [
     {
       id: 1,
@@ -137,7 +141,7 @@ export default function AllServicesPage() {
                       <Button
                         variant="outline"
                         className="group"
-                        onClick={() => window.location.hash = category.href}
+                        onClick={() => navigate((category.href || '').replace('#', '/').replace('-page', ''))}
                       >
                         View Details
                         <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -160,7 +164,7 @@ export default function AllServicesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              onClick={() => window.location.hash = '#contact-page'}
+              onClick={() => navigate('/contact')}
             >
               Contact Us
             </Button>

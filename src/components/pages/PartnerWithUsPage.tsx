@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+import SEO from '../seo/SEO';
 import {
   Check,
   Users,
@@ -21,6 +23,8 @@ import Button from '../ui/Button';
 import Card, { CardBody } from '../ui/Card';
 
 export default function PartnerWithUsPage() {
+  const navigate = useNavigate();
+
   const partnershipModels = [
     {
       icon: Megaphone,
@@ -235,7 +239,7 @@ export default function PartnerWithUsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              onClick={() => window.location.hash = '#contact-page'}
+              onClick={() => navigate('/contact')}
               className="bg-white text-brand hover:bg-brand-muted"
             >
               Book a Partnership Call
@@ -244,7 +248,7 @@ export default function PartnerWithUsPage() {
               size="lg"
               variant="outline"
               className="border-2 border-white text-white hover:bg-white/10"
-              onClick={() => window.location.hash = '#apply-page'}
+              onClick={() => navigate('/apply')}
             >
               Apply Now
             </Button>
@@ -310,7 +314,7 @@ export default function PartnerWithUsPage() {
                     <Button
                       size="lg"
                       className="w-full"
-                      onClick={() => window.location.hash = '#contact-page'}
+                      onClick={() => navigate('/contact')}
                     >
                       Discuss This Model
                     </Button>
@@ -450,7 +454,7 @@ export default function PartnerWithUsPage() {
               </ul>
               <Button
                 size="lg"
-                onClick={() => window.location.hash = '#contact-page'}
+                onClick={() => navigate('/contact')}
                 className="w-full bg-white text-brand hover:bg-brand-muted"
               >
                 Contact Us
@@ -458,7 +462,7 @@ export default function PartnerWithUsPage() {
               <Button
                 size="lg"
                 variant="outline"
-                onClick={() => window.location.hash = '#apply-page'}
+                onClick={() => navigate('/apply')}
                 className="w-full mt-3 border-2 border-white text-white hover:bg-white/10"
               >
                 Submit Application
@@ -478,13 +482,13 @@ export default function PartnerWithUsPage() {
             solutions to your clients
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" onClick={() => window.location.hash = '#contact-page'}>
+            <Button size="lg" onClick={() => navigate('/contact')}>
               Get in Touch
             </Button>
             <Button
               size="lg"
               variant="outline"
-              onClick={() => window.location.hash = '#apply-page'}
+              onClick={() => navigate('/apply')}
             >
               Apply for Partnership
             </Button>

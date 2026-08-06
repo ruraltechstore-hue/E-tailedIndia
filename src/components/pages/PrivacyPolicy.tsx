@@ -1,3 +1,4 @@
+import SEO from '../seo/SEO';
 import { Shield, Lock, Eye, FileText, AlertCircle } from 'lucide-react';
 import Card, { CardBody } from '../ui/Card';
 

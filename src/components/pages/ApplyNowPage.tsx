@@ -1,3 +1,4 @@
+import SEO from '../seo/SEO';
 import { useState, useEffect } from 'react';
 import { Upload, CheckCircle2, FileText, CreditCard, Send, Crown, Building2, Rocket, Package, Building, Code, Truck, MapPin } from 'lucide-react';
 import Button from '../ui/Button';

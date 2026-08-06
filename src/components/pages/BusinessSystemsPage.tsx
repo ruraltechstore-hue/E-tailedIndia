@@ -1,9 +1,13 @@
+import { useNavigate } from 'react-router-dom';
+import SEO from '../seo/SEO';
 import { Store, ShoppingBag, Rocket, CheckCircle2 } from 'lucide-react';
 import Card, { CardBody } from '../ui/Card';
 import Button from '../ui/Button';
 import ServiceContactForm from '../ui/ServiceContactForm';
 
 export default function BusinessSystemsPage() {
+  const navigate = useNavigate();
+
   const systems = [
     'Multi-vendor marketplace',
     'Dropshipping store',
@@ -123,7 +127,7 @@ export default function BusinessSystemsPage() {
               size="lg"
               variant="outline"
               className="border-2 border-white text-white hover:bg-white/10"
-              onClick={() => window.location.hash = '#contact-page'}
+              onClick={() => navigate('/contact')}
             >
               Request Demo
             </Button>

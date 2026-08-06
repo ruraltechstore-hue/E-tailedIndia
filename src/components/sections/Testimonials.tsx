@@ -1,7 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import { Star, Quote } from 'lucide-react';
 import Card, { CardBody } from '../ui/Card';
 
 export default function Testimonials() {
+  const navigate = useNavigate();
+
   const testimonials = [
     {
       name: 'Rajesh Kumar',
@@ -101,7 +104,7 @@ export default function Testimonials() {
             that drives measurable growth.
           </p>
           <button
-            onClick={() => (window.location.hash = '#contact-page')}
+            onClick={() => (navigate('/contact'))}
             className="px-8 py-4 bg-white text-accent font-bold text-lg rounded-lg hover:bg-gray-100 transition-colors shadow-lg"
           >
             Book a Free Consultation
