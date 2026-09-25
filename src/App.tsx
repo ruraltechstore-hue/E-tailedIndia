@@ -9,15 +9,9 @@ import AIChatbot from './components/ui/AIChatbot';
 const HomePage = React.lazy(() => import('./components/pages/HomePage'));
 const AboutPage = React.lazy(() => import('./components/pages/AboutPage'));
 const AllServicesPage = React.lazy(() => import('./components/pages/AllServicesPage'));
-const DigitalBusinessServicesPage = React.lazy(() => import('./components/pages/DigitalBusinessServicesPage'));
-const WebsiteECommercePage = React.lazy(() => import('./components/pages/WebsiteECommercePage'));
-const SocialMediaServicesPage = React.lazy(() => import('./components/pages/SocialMediaServicesPage'));
-const AutomationsCRMPage = React.lazy(() => import('./components/pages/AutomationsCRMPage'));
-const BusinessSystemsPage = React.lazy(() => import('./components/pages/BusinessSystemsPage'));
-const DigitalMarketingPage = React.lazy(() => import('./components/pages/DigitalMarketingPage'));
-const BrandingPrintingPage = React.lazy(() => import('./components/pages/BrandingPrintingPage'));
-const SaaSSoftwarePage = React.lazy(() => import('./components/pages/SaaSSoftwarePage'));
+const ServiceDetailPage = React.lazy(() => import('./components/pages/ServiceDetailPage'));
 const BlogsPage = React.lazy(() => import('./components/pages/BlogsPage'));
+const CareersPage = React.lazy(() => import('./components/pages/CareersPage'));
 const PartnerWithUsPage = React.lazy(() => import('./components/pages/PartnerWithUsPage'));
 const ApplyNowPage = React.lazy(() => import('./components/pages/ApplyNowPage'));
 const ContactPage = React.lazy(() => import('./components/pages/ContactPage'));
@@ -50,17 +44,18 @@ function App() {
               
               {/* Services Routes */}
               <Route path="/services" element={<div className="pt-20"><AllServicesPage /></div>} />
-              <Route path="/services/digital-business" element={<div className="pt-20"><DigitalBusinessServicesPage /></div>} />
-              <Route path="/services/website-ecommerce" element={<div className="pt-20"><WebsiteECommercePage /></div>} />
-              <Route path="/services/social-media" element={<div className="pt-20"><SocialMediaServicesPage /></div>} />
-              <Route path="/services/automations-crm" element={<div className="pt-20"><AutomationsCRMPage /></div>} />
-              <Route path="/services/business-systems" element={<div className="pt-20"><BusinessSystemsPage /></div>} />
-              <Route path="/services/digital-marketing" element={<div className="pt-20"><DigitalMarketingPage /></div>} />
-              <Route path="/services/branding-printing" element={<div className="pt-20"><BrandingPrintingPage /></div>} />
-              <Route path="/services/saas-software" element={<div className="pt-20"><SaaSSoftwarePage /></div>} />
+              <Route path="/services/web-branding" element={<ServiceDetailPage serviceId="web-branding" />} />
+              <Route path="/services/ecommerce" element={<ServiceDetailPage serviceId="ecommerce" />} />
+              <Route path="/services/social-media-marketing" element={<ServiceDetailPage serviceId="social-media-marketing" />} />
+              <Route path="/services/automation-crm" element={<ServiceDetailPage serviceId="automation-crm" />} />
+              <Route path="/services/business-systems" element={<ServiceDetailPage serviceId="business-systems" />} />
+              <Route path="/services/digital-marketing" element={<ServiceDetailPage serviceId="digital-marketing" />} />
+              <Route path="/services/branding-printing" element={<ServiceDetailPage serviceId="branding-printing" />} />
+              <Route path="/services/saas-software" element={<ServiceDetailPage serviceId="saas-software" />} />
               
               {/* Other Pages */}
               <Route path="/blogs" element={<div className="pt-20"><BlogsPage /></div>} />
+              <Route path="/careers" element={<div className="pt-20"><CareersPage /></div>} />
               <Route path="/partner" element={<div className="pt-20"><PartnerWithUsPage /></div>} />
               <Route path="/apply" element={<div className="pt-20"><ApplyNowPage /></div>} />
               <Route path="/contact" element={<div className="pt-20"><ContactPage /></div>} />

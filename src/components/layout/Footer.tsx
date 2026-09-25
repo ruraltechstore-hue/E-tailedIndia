@@ -78,6 +78,7 @@ export default function Footer() {
               <li><Link to="/" className="text-gray-400 hover:text-white transition-colors">Home</Link></li>
               <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
               <li><Link to="/services" className="text-gray-400 hover:text-white transition-colors">Services</Link></li>
+              <li><Link to="/careers" className="text-gray-400 hover:text-white transition-colors">Careers</Link></li>
               <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
@@ -85,10 +86,10 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-4">Services</h4>
             <ul className="space-y-2">
-              <li><Link to="/services/digital-business" className="text-gray-400 hover:text-white transition-colors">Web & Branding</Link></li>
-              <li><Link to="/services/website-ecommerce" className="text-gray-400 hover:text-white transition-colors">Website & E-Commerce</Link></li>
-              <li><Link to="/services/social-media" className="text-gray-400 hover:text-white transition-colors">Social Media Services</Link></li>
-              <li><Link to="/services/automations-crm" className="text-gray-400 hover:text-white transition-colors">Automations & CRM</Link></li>
+              <li><Link to="/services/web-branding" className="text-gray-400 hover:text-white transition-colors">Web & Branding</Link></li>
+              <li><Link to="/services/ecommerce" className="text-gray-400 hover:text-white transition-colors">Website & E-Commerce</Link></li>
+              <li><Link to="/services/social-media-marketing" className="text-gray-400 hover:text-white transition-colors">Social Media Services</Link></li>
+              <li><Link to="/services/automation-crm" className="text-gray-400 hover:text-white transition-colors">Automations & CRM</Link></li>
               <li><Link to="/services/digital-marketing" className="text-gray-400 hover:text-white transition-colors">Digital Marketing & SaaS</Link></li>
               <li><Link to="/blogs" className="text-gray-400 hover:text-white transition-colors">Blog & Resources</Link></li>
             </ul>

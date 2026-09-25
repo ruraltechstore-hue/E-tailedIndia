@@ -10,6 +10,7 @@ export default function Header() {
     { name: 'About Us', to: '/about' },
     { name: 'All Services', to: '/services' },
     { name: 'Partner With Us', to: '/partner' },
+    { name: 'Careers', to: '/careers' },
     { name: 'FAQ', to: '/faq' },
     { name: 'Contact Us', to: '/contact' },
   ];
