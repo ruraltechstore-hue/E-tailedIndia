@@ -12,7 +12,7 @@ export default function Header() {
     { name: 'Partner With Us', to: '/partner' },
     { name: 'Careers', to: '/careers' },
     { name: 'FAQ', to: '/faq' },
-    { name: 'Contact Us', to: '/contact' },
+    { name: 'Contact Us', to: '#contact' },
   ];
 
   return (
@@ -76,3 +76,4 @@ export default function Header() {
     </header>
   );
 }
+

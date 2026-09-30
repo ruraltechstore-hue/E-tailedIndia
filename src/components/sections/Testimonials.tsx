@@ -104,7 +104,7 @@ export default function Testimonials() {
             that drives measurable growth.
           </p>
           <button
-            onClick={() => (navigate('/contact'))}
+            onClick={() => (navigate('#contact'))}
             className="px-8 py-4 bg-white text-accent font-bold text-lg rounded-lg hover:bg-gray-100 transition-colors shadow-lg"
           >
             Book a Free Consultation
@@ -114,3 +114,4 @@ export default function Testimonials() {
     </section>
   );
 }
+

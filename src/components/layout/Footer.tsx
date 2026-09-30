@@ -79,7 +79,7 @@ export default function Footer() {
               <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
               <li><Link to="/services" className="text-gray-400 hover:text-white transition-colors">Services</Link></li>
               <li><Link to="/careers" className="text-gray-400 hover:text-white transition-colors">Careers</Link></li>
-              <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
+              <li><Link to="#contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -139,3 +139,4 @@ export default function Footer() {
     </footer>
   );
 }
+

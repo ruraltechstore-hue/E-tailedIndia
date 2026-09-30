@@ -137,7 +137,7 @@ export default function DigitalBusinessServicesPage() {
               size="lg"
               variant="outline"
               className="border-2 border-white text-white hover:bg-white/10"
-              onClick={() => navigate('/contact')}
+              onClick={() => navigate('#contact')}
             >
               Contact Us
             </Button>
@@ -147,3 +147,4 @@ export default function DigitalBusinessServicesPage() {
     </div>
   );
 }
+

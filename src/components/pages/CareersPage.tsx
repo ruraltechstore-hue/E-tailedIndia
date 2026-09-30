@@ -178,7 +178,7 @@ export default function CareersPage() {
                   <div className="pt-6 mt-6 border-t border-gray-200">
                     <Button 
                       size="lg" 
-                      onClick={() => navigate('/contact')}
+                      onClick={() => navigate('#contact')}
                       className="w-full sm:w-auto"
                     >
                       Apply for this Position <ArrowRight className="w-5 h-5 ml-2" />
@@ -194,3 +194,4 @@ export default function CareersPage() {
     </div>
   );
 }
+

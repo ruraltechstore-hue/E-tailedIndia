@@ -253,7 +253,7 @@ export default function PartnerWithUs() {
               size="lg"
               variant="outline"
               className="border-2 border-white text-white hover:bg-white/10"
-              onClick={() => (navigate('/contact'))}
+              onClick={() => (navigate('#contact'))}
             >
               Schedule a Call
             </Button>
@@ -299,3 +299,4 @@ export default function PartnerWithUs() {
     </section>
   );
 }
+

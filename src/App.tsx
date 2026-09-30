@@ -4,6 +4,7 @@ import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import WhatsAppButton from './components/ui/WhatsAppButton';
 import AIChatbot from './components/ui/AIChatbot';
+import GlobalContactModal from './components/ui/GlobalContactModal';
 
 // Lazy loading all pages for optimal performance (Code Splitting)
 const HomePage = React.lazy(() => import('./components/pages/HomePage'));
@@ -78,9 +79,11 @@ function App() {
         <Footer />
         <WhatsAppButton />
         <AIChatbot />
+        <GlobalContactModal />
       </div>
     </Router>
   );
 }
 
 export default App;
+

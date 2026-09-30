@@ -125,7 +125,7 @@ export default function DigitalMarketingPage() {
           <Button
             size="lg"
             className="bg-white text-brand hover:bg-gray-100"
-            onClick={() => navigate('/contact')}
+            onClick={() => navigate('#contact')}
           >
             Contact Us
           </Button>
@@ -134,3 +134,4 @@ export default function DigitalMarketingPage() {
     </div>
   );
 }
+

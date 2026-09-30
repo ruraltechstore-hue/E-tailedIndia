@@ -249,7 +249,7 @@ export default function FAQ() {
 
             <button
 
-              onClick={() => (navigate('/contact'))}
+              onClick={() => (navigate('#contact'))}
 
               className="px-6 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors"
 
@@ -270,5 +270,6 @@ export default function FAQ() {
   );
 
 }
+
 
 

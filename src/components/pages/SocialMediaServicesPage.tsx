@@ -127,7 +127,7 @@ export default function SocialMediaServicesPage() {
               size="lg"
               variant="outline"
               className="border-2 border-white text-white hover:bg-white/10"
-              onClick={() => navigate('/contact')}
+              onClick={() => navigate('#contact')}
             >
               Learn More
             </Button>
@@ -137,3 +137,4 @@ export default function SocialMediaServicesPage() {
     </div>
   );
 }
+

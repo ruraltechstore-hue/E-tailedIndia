@@ -239,7 +239,7 @@ export default function PartnerWithUsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              onClick={() => navigate('/contact')}
+              onClick={() => navigate('#contact')}
               className="bg-white text-brand hover:bg-brand-muted"
             >
               Book a Partnership Call
@@ -314,7 +314,7 @@ export default function PartnerWithUsPage() {
                     <Button
                       size="lg"
                       className="w-full"
-                      onClick={() => navigate('/contact')}
+                      onClick={() => navigate('#contact')}
                     >
                       Discuss This Model
                     </Button>
@@ -454,7 +454,7 @@ export default function PartnerWithUsPage() {
               </ul>
               <Button
                 size="lg"
-                onClick={() => navigate('/contact')}
+                onClick={() => navigate('#contact')}
                 className="w-full bg-white text-brand hover:bg-brand-muted"
               >
                 Contact Us
@@ -482,7 +482,7 @@ export default function PartnerWithUsPage() {
             solutions to your clients
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" onClick={() => navigate('/contact')}>
+            <Button size="lg" onClick={() => navigate('#contact')}>
               Get in Touch
             </Button>
             <Button
@@ -498,3 +498,4 @@ export default function PartnerWithUsPage() {
     </div>
   );
 }
+

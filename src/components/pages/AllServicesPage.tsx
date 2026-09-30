@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import SEO from '../seo/SEO';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Truck, GraduationCap, Briefcase, ExternalLink } from 'lucide-react';
 import Card, { CardBody } from '../ui/Card';
 import Button from '../ui/Button';
 import { servicesData } from '../../lib/services-data';
@@ -26,10 +26,10 @@ export default function AllServicesPage() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl lg:text-7xl font-bold mb-6">
-            Digital Marketing & SaaS Services
+            Our Digital & Professional Ecosystem
           </h1>
           <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            End-to-end solutions across <strong>8 service categories</strong> — designed to scale your business in the digital era.
+            Comprehensive solutions spanning digital marketing, SaaS, logistics, education, and career development — designed to empower your business and professional journey.
           </p>
         </div>
       </div>
@@ -37,6 +37,84 @@ export default function AllServicesPage() {
       {/* Services List */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Top Services (Logistics, Education, Career) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            {[
+              {
+                id: 'logistics',
+                title: 'Logistics – Rural Tech Services',
+                description: 'Bridging the gap with efficient rural logistics and tech-enabled supply chain solutions tailored for emerging markets.',
+                url: 'https://ruraltechstore.com/',
+                icon: Truck,
+                image: '/partners/ruraltech.jpg',
+              },
+              {
+                id: 'education',
+                title: 'Education – IIECM',
+                description: 'Empowering minds through quality education, specialized courses, and industry-focused certification programs.',
+                url: 'https://iiecm.org/',
+                icon: GraduationCap,
+                image: '/partners/iiecm.png',
+              },
+              {
+                id: 'career',
+                title: 'Career Services – VyraPath',
+                description: 'Guiding professionals towards their dream careers with expert counseling, placement support, and skill development.',
+                url: 'https://vyrapath.com/',
+                icon: Briefcase,
+                image: '/partners/vyrapath.png',
+              },
+            ].map((service) => {
+              const Icon = service.icon;
+              return (
+                <Card 
+                  key={service.id} 
+                  hover 
+                  className="overflow-hidden border-none shadow-xl cursor-pointer group flex flex-col h-full bg-white transition-all duration-300 hover:-translate-y-2"
+                  onClick={() => window.open(service.url, '_blank')}
+                >
+                  <div className="relative h-56 overflow-hidden bg-white">
+                    <img 
+                      src={service.image} 
+                      alt={service.title} 
+                      className="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-105" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/10 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 flex items-center space-x-2">
+                      <div className="w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-md bg-white/20">
+                        <Icon className="w-5 h-5 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <CardBody className="p-6 flex flex-col flex-grow">
+                    <h3 className="font-bold text-xl text-gray-900 mb-3 group-hover:text-brand transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-6 flex-grow leading-relaxed">
+                      {service.description}
+                    </p>
+                    
+                    <div className="mt-auto pt-4">
+                      <Button 
+                        variant="outline" 
+                        className="w-full flex items-center justify-center gap-2 border-brand text-brand hover:bg-brand hover:text-white"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.open(service.url, '_blank');
+                        }}
+                      >
+                        Explore Service
+                        <ExternalLink className="w-4 h-4" />
+                      </Button>
+                    </div>
+                  </CardBody>
+                </Card>
+              );
+            })}
+          </div>
+
           <div className="space-y-16">
             {servicesData.map((service, index) => {
               const Icon = service.icon;
@@ -119,7 +197,7 @@ export default function AllServicesPage() {
               size="lg"
               variant="outline"
               className="border-2 border-white text-white hover:bg-white/10 hover:text-white"
-              onClick={() => navigate('/contact')}
+              onClick={() => navigate('#contact')}
             >
               Contact Us
             </Button>
@@ -136,3 +214,4 @@ export default function AllServicesPage() {
     </div>
   );
 }
+

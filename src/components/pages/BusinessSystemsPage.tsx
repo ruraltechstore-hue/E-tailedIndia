@@ -127,7 +127,7 @@ export default function BusinessSystemsPage() {
               size="lg"
               variant="outline"
               className="border-2 border-white text-white hover:bg-white/10"
-              onClick={() => navigate('/contact')}
+              onClick={() => navigate('#contact')}
             >
               Request Demo
             </Button>
@@ -137,3 +137,4 @@ export default function BusinessSystemsPage() {
     </div>
   );
 }
+

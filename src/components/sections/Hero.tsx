@@ -28,7 +28,7 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="group" onClick={() => navigate('/contact')}>
+              <Button size="lg" className="group" onClick={() => navigate('#contact')}>
                 Get a Free Consultation
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -151,3 +151,4 @@ export default function Hero() {
     </section>
   );
 }
+
